@@ -8,7 +8,9 @@ class MailComposerMessage(models.TransientModel):
     _inherit = "mail.compose.message"
 
     def _onchange_template_id(self, template_id, composition_mode, model, res_id):
-        """Inherit method for attach chatter box document in email #T00456 """
+        """Inherit method for attach chatter box document in email #T00456"""
+
+        # call super method #T00456
         return super(MailComposerMessage, self)._onchange_template_id(
             template_id=template_id,
             composition_mode=composition_mode,
