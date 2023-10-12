@@ -5,7 +5,7 @@
     "name": "Sale Attachment",
     "version": "15.0.0.0.1",
     "depends": ["sale_management", "mail"],
-    "author": "Bizzappdev",
+    "author": "bizzappdev",
     "category": "Sale Attachment / Sale Attachment",
     "description": """Attach File in Email""",
     "application": True,
