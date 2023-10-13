@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Main Menu SCHOOL #T00337  -->
+    <menuitem id="school_management_menu_root" name="School" />
+
+    <!-- Student menu #T00337 -->
+    <menuitem
+        id="school_management_menu"
+        name="Student"
+        parent="school_management_menu_root"
+        action="action_school_student"
+    />
+
+    <!-- Teacher menu #T00337 -->
+    <menuitem
+        id="school_teacher_menu"
+        name="Teacher"
+        parent="school_management_menu_root"
+        action="action_school_teacher"
+    />
+
+    <!-- Subject menu #T00337 -->
+    <menuitem
+        id="school_subject_menu"
+        name="Subject"
+        parent="school_management_menu_root"
+        action="action_school_subject"
+    />
+
+    <!-- Library menu #T00356 -->
+    <menuitem
+        id="school_library_menu"
+        name="Library"
+        parent="school_management_menu_root"
+        action="action_school_library"
+    />
+
+    <!-- Config Settings menu #T00337 -->
+    <menuitem
+        id="res_config_settings_root"
+        name="Configuration"
+        parent="school_management_menu_root"
+        action="action_rec_config_settings"
+    />
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- action for Library menu #T00356 -->
+    <record id="action_school_library" model="ir.actions.act_window">
+        <field name="name">School Library</field>
+        <field name="res_model">school.library</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- form view #T00356-->
+    <record id="school_library_view_form" model="ir.ui.view">
+        <field name="name">library.view.form</field>
+        <field name="model">school.library</field>
+        <field name="arch" type="xml">
+           <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_name" />
+                            <field name="enrollment_no" />
+                            <field name="is_active" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tree view #T00356 -->
+    <record id="school_library_view_tree" model="ir.ui.view">
+        <field name="name">library.tree</field>
+        <field name="model">school.library</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_name" string="Student Name" />
+                <field name="enrollment_no" string="Enrollment No" />
+                <field name="is_active" string="Library Pass Avtive" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- search view #T00356 -->
+    <record id="school_library_search" model="ir.ui.view">
+        <field name="name">school.library.search</field>
+        <field name="model">school.library</field>
+        <field name="arch" type="xml">
+            <search>
+               <field name="student_name" />
+                <field name="enrollment_no" />
+                <field name="is_active" />
+                <!-- added filter and group by tags #T00333 -->
+                <filter
+                    domain="[('is_active','=', 'true')]"
+                    name="active"
+                    string="Active"
+                />
+                <filter
+                    domain="[('is_active','!=', 'true')]"
+                    name="not_active"
+                    string="Not Active"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Is Active"
+                        name="is_active"
+                        context="{'group_by':'is_active'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

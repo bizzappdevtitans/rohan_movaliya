@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- action for teacher menu #T00337 -->
+    <record id="action_school_teacher" model="ir.actions.act_window">
+        <field name="name">School Teacher</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!-- form view #T00337 -->
+    <record id="school_teacher_view_form" model="ir.ui.view">
+        <field name="name">teacher.view.form</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <!-- Smart Buttons -->
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="view_student_ids"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-files-o"
+                        >
+                            <field
+                                string="Students"
+                                name="count_student"
+                                widget="statinfo"
+                            />
+                        </button>
+                    </div>
+                    <div class="oe-title">
+                        <h1>
+                            <field name="teacher_no" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="sort_name" />
+                            <field name="age" />
+                            <field name="mobile_no" widget="phone" />
+                            <field name="teacher_email" widget="email" />
+                        </group>
+                        <group>
+                            <field name="standard" />
+                            <field name="division" />
+                            <field
+                                name="subject_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color'}"
+                            />
+                        </group>
+                        <notebook>
+                        <page string="Other Info" name="other_information">
+                            <group>
+                                <field
+                                        name="qualification"
+                                        placeholder="Teacher Qualidication"
+                                    />
+                                <field
+                                        name="about_teacher"
+                                        placeholder="About Teacher"
+                                    />
+                            </group>
+                        </page>
+                    </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tree view  #T00337-->
+    <record id="school_teacher_view_tree" model="ir.ui.view">
+        <field name="name">teacher.tree</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <tree class="text-center oe_inline">
+                <field name="teacher_no" string="Teacher No" />
+                <field name="name" string="Name" />
+                <field name="sort_name" string="Sort Code" />
+                <field name="subject_ids" string="Subjects" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- search view #T00337 -->
+    <record id="school_teacher_search" model="ir.ui.view">
+        <field name="name">school.teacher.search</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="teacher_no" />
+                <field name="name" />
+                <field name="sort_name" />
+                <field name="age" />
+                <field name="mobile_no" />
+                <!-- added filter and group by tags #T00333 -->
+                <filter
+                    domain="[('standard','=', 'std_9')]"
+                    name="std-9"
+                    string="Std-9"
+                />
+                <filter
+                    domain="[('standard','=', 'std_10')]"
+                    name="std-10"
+                    string="Std-10"
+                />
+                <filter
+                    domain="[('standard','=', 'std_11')]"
+                    name="std-11"
+                    string="Std-11"
+                />
+                <filter
+                    domain="[('standard','=', 'std_12')]"
+                    name="std-12"
+                    string="Std-12"
+                />
+                <filter domain="[('division','=', 'a')]" name="div-a" string="Div-A" />
+                <filter domain="[('division','=', 'b')]" name="div-b" string="Div-B" />
+                <filter domain="[('division','=', 'c')]" name="div-c" string="Div-C" />
+                <filter domain="[('division','=', 'd')]" name="div-d" string="Div-D" />
+                <filter domain="[('division','=', 'e')]" name="div-e" string="Div-E" />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Division"
+                        name="division"
+                        context="{'group_by':'division'}"
+                    />
+                    <filter
+                        string="Standard"
+                        name="standard"
+                        context="{'group_by':'standard'}"
+                    />
+                    <filter string="Age" name="age" context="{'group_by':'age'}" />
+                    <filter
+                        string="Subject"
+                        name="subject_ids"
+                        context="{'group_by':'subject_ids'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <!-- Record Rules for School Students #T00418 -->
+        <record id="school_management_access" model="ir.module.category">
+            <field name="name">School Management</field>
+        </record>
+
+        <record id="school_student_access" model="res.groups">
+            <field name="name">School Management</field>
+            <field
+            name="category_id"
+            ref="school_management.school_management_access"
+        />
+        </record>
+</odoo>

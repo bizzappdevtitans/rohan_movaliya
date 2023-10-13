@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- action for subjects #T00337 -->
+    <record id="action_school_subject" model="ir.actions.act_window">
+        <field name="name">School Subject</field>
+        <field name="res_model">school.subject</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+    <!-- form view #T00337 -->
+    <record id="school_subject_view_form" model="ir.ui.view">
+        <field name="name">student.view.form</field>
+        <field name="model">school.subject</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="subject_code" />
+                            <field name="subject_name" />
+                            <field name="subject_sort_name" />
+                            <field name="standard" />
+                            <field
+                                name="teacher_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color'}"
+                            />
+                        </group>
+                        <group />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- tree view #T00337 -->
+    <record id="school_subject_view_tree" model="ir.ui.view">
+        <field name="name">subject.tree</field>
+        <field name="model">school.subject</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="subject_code" />
+                <field name="subject_name" />
+                <field name="subject_sort_name" />
+                <field name="standard" />
+                <field name="teacher_ids" />
+            </tree>
+        </field>
+    </record>
+    <!-- search view #T00337 -->
+    <record id="school_subject_search" model="ir.ui.view">
+        <field name="name">school.subject.search</field>
+        <field name="model">school.subject</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="subject_code" />
+                <field name="subject_name" />
+                <field name="subject_sort_name" />
+                <field name="standard" />
+                <field name="teacher_ids" />
+                <!-- added filter and group by tags #T00333 -->
+                <filter
+                    domain="[('standard','=', 'std_9')]"
+                    name="std-9"
+                    string="Std-9"
+                />
+                <filter
+                    domain="[('standard','=', 'std_10')]"
+                    name="std-10"
+                    string="Std-10"
+                />
+                <filter
+                    domain="[('standard','=', 'std_11')]"
+                    name="std-11"
+                    string="Std-11"
+                />
+                <filter
+                    domain="[('standard','=', 'std_12')]"
+                    name="std-12"
+                    string="Std-12"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Standard"
+                        name="standard"
+                        context="{'group_by':'standard'}"
+                    />
+                    <filter
+                        string="Teacher"
+                        name="teacher"
+                        context="{'group_by':'teacher_ids'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
