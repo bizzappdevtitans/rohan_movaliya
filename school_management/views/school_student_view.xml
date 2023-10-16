@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- action of student menu #T00337 -->
+    <record id="action_school_student" model="ir.actions.act_window">
+        <field name="name">School Student</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">tree,form,search,kanban</field>
+    </record>
+    <!-- form view  #T00337-->
+    <record id="school_student_view_form" model="ir.ui.view">
+        <field name="name">student.view.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        class="oe_highlight"
+                        name="%(school_management.action_school_student_wizard)d"
+                        string="Library Access "
+                        type="action"
+                    />
+                </header>
+                <sheet>
+                    <!-- smart button #T00337 -->
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            class="oe_stat_button"
+                            icon="fa-files-o"
+                            name="view_teacher_ids"
+                            type="object"
+                            attrs="{'invisible': [('count_teacher','=',0)]}"
+                        >
+                            <field
+                                name="count_teacher"
+                                string="Teacher"
+                                widget="statinfo"
+                            />
+                        </button>
+
+                        <button
+                            class="oe_stat_button"
+                            icon="fa-archive"
+                            name="view_subject_ids"
+                            type="object"
+                            attrs="{'invisible': [('count_subject', '=', 0)]}"
+                        >
+                            <field
+                                name="count_subject"
+                                string="Subject"
+                                widget="statinfo"
+                            />
+                        </button>
+                    </div>
+                    <div class="oe-title">
+                        <h1><field name="enrollment_no" /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field
+                                name="gender"
+                                options="{'horizontal': true}"
+                                widget="radio"
+                            />
+                            <field name="birth_date" />
+                            <field name="age" />
+                            <field name="blood_group" />
+                            <field name="mobile_no" widget="phone" />
+                        </group>
+                        <group>
+                            <field name="standard" />
+                            <field name="division" />
+                            <field name="teacher_id" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Fees">
+                            <group>
+                                <group>
+                                    <field invisible="1" name="currency_id" />
+                                    <field name="total_fees" />
+                                    <field
+                                        name="start_date"
+                                        string="Start Date to Pay Fees"
+                                    />
+                                    <field
+                                        name="last_date"
+                                        string="Last Date to Pay Fees"
+                                    />
+                                </group>
+                                <group>
+                                    <field name="total_boys" />
+                                    <field name="total_girls" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- chatter box #T00337 -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+    <!-- tree view  #T00377-->
+    <record id="school_student_view_tree" model="ir.ui.view">
+        <field name="name">student.tree</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree class="text-center oe_inline">
+                <field name="enrollment_no" />
+                <field name="name" />
+                <field name="gender" />
+                <field name="standard" />
+                <field name="division" />
+                <field name="teacher_id" />
+            </tree>
+        </field>
+    </record>
+    <!-- search view #T00337 -->
+    <record id="school_student_search" model="ir.ui.view">
+        <field name="name">school.student.search</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="birth_date" />
+                <field name="age" />
+                <field name="gender" />
+                <field name="standard" />
+                <field name="division" />
+                <field name="enrollment_no" />
+                <!-- added filter and group by tags #T00333 -->
+                <filter domain="[('gender','=', 'male')]" name="male" string="Male" />
+                <filter
+                    domain="[('gender','=', 'female')]"
+                    name="female"
+                    string="Female"
+                />
+                <filter
+                    domain="[('standard','=', 'std_9')]"
+                    name="std-9"
+                    string="Std-9"
+                />
+                <filter
+                    domain="[('standard','=', 'std_10')]"
+                    name="std-10"
+                    string="Std-10"
+                />
+                <filter
+                    domain="[('standard','=', 'std_11')]"
+                    name="std-11"
+                    string="Std-11"
+                />
+                <filter
+                    domain="[('standard','=', 'std_12')]"
+                    name="std-12"
+                    string="Std-12"
+                />
+                <filter domain="[('division','=', 'a')]" name="div-a" string="Div-A" />
+                <filter domain="[('division','=', 'b')]" name="div-b" string="Div-B" />
+                <filter domain="[('division','=', 'c')]" name="div-c" string="Div-C" />
+                <filter domain="[('division','=', 'd')]" name="div-d" string="Div-D" />
+                <filter domain="[('division','=', 'e')]" name="div-e" string="Div-E" />
+                <group expand="0" string="Group By">
+                    <filter
+                        context="{'group_by':'division'}"
+                        name="division"
+                        string="Division"
+                    />
+                    <filter
+                        context="{'group_by':'standard'}"
+                        name="standard"
+                        string="Standard"
+                    />
+                    <filter
+                        context="{'group_by':'blood_group'}"
+                        name="blood_group"
+                        string="Blood Group"
+                    />
+                    <filter context="{'group_by':'age'}" name="age" string="Age" />
+                    <filter
+                        context="{'group_by':'teacher_id'}"
+                        name="teacher_id"
+                        string="Class Teacher"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <!-- kanban view #T00337-->
+    <record id="school_student_kanban" model="ir.ui.view">
+        <field name="name">school.student.kanban</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div>
+                                <strong>
+                                    <b>
+                                        <field name="enrollment_no" />
+                                    </b>
+                                </strong>
+                                <div>
+                                    <ul>
+                                        <li>Name:
+                                            <field name="name" /></li>
+                                        <li>Age:
+                                            <field name="age" /></li>
+                                        <li>Gender:
+                                            <field name="gender" /></li>
+                                        <li>Std:
+                                            <field name="standard" /></li>
+                                        <li>Division:
+                                            <field name="division" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>
