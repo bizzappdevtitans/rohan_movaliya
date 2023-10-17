@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- action for book.shelf #T00427  -->
+    <record id="action_book_shelf_menu" model="ir.actions.act_window">
+        <field name="name">Book Shelf</field>
+        <field name="res_model">book.shelf</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- form view for book.shelf #T00427 -->
+    <record id="view_book_shelf_form" model="ir.ui.view">
+        <field name="name">book.shelf.form</field>
+        <field name="model">book.shelf</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- statusbar #T00427 -->
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,process,confirm"
+                    />
+                    <!-- confirm button #T00427 -->
+                    <button
+                        class="oe_highlight"
+                        name="confirm_shelf"
+                        states="draft"
+                        string="Confirm"
+                        type="object"
+                    />
+                    <!-- return button #T00427 -->
+                    <button
+                        class="oe_highlight"
+                        name="return_book"
+                        states="confirm"
+                        string="Return"
+                        type="object"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- smart button #T00427 -->
+                        <button
+                            class="oe_stat_button"
+                            icon="fa-files-o"
+                            name="action_view_issued_books"
+                            string="Issued Book"
+                            type="object"
+                        />
+                    </div>
+                    <div class="oe-title">
+                        <h1><field name="book_shelf_no" /></h1>
+                    </div>
+                    <group>
+                        <field
+                            name="partner_id"
+                            attrs="{'readonly': [('state', 'in', ('process','confirm','cancelled'))]}"
+                        />
+                        <field name="sale_order_ref" />
+                        <field name="order_confirm_date" />
+                    </group>
+                    <notebook>
+                        <page string="Shelf Lines">
+                            <field
+                                name="shelf_line_ids"
+                                widget="one2many_list"
+                                attrs="{'readonly': [('state', 'in', ('process','confirm','cancelled'))]}"
+                            >
+                                <tree>
+                                    <field name="product_id" />
+                                    <field name="min_day" />
+                                    <field name="max_day" />
+                                    <field name="issue_date" />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="product_id" />
+                                        <field name="min_day" />
+                                        <field name="max_day" />
+                                        <field name="issue_date" />
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- tree view for book.shelf #T00427 -->
+    <record id="view_book_shelf_tree" model="ir.ui.view">
+        <field name="name">book.shelf.tree</field>
+        <field name="model">book.shelf</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="book_shelf_no" string="Book Shelf No" />
+                <field name="partner_id" />
+                <field name="state" />
+                <field name="sale_order_ref" />
+            </tree>
+        </field>
+    </record>
+</odoo>

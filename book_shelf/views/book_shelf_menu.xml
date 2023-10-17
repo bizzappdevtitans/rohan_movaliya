@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <!-- main menu #T00427 -->
+  <menuitem id="book_shelf_menu_root" name="Book Shelf" />
+  <!-- Book Shelf menu #T00427 -->
+  <menuitem
+        id="book_shelf_menu"
+        name="Book Shelf"
+        parent="book_shelf_menu_root"
+        action="action_book_shelf_menu"
+    />
+  <!-- Book Shelf Line menu #T00427 -->
+  <menuitem
+        id="book_shelf_line_menu"
+        name="Issues Books"
+        parent="book_shelf_menu_root"
+        action="action_book_shelf_line_menu"
+    />
+  <!--  Config Settings menu #T00427  -->
+  <menuitem
+        id="book_shelf_menu_setting_root"
+        parent="book_shelf_menu_root"
+        name="Configuration"
+    />
+
+  <menuitem
+        id="res_config_settings_menu"
+        name="Settings"
+        parent="book_shelf_menu_setting_root"
+        action="action_rec_config_settings"
+    />
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Sequences for book shelf #T00427 -->
+    <data>
+        <record id="seq_book_shelf" model="ir.sequence">
+            <field name="name">Book Shelf No</field>
+            <field name="code">book.shelf</field>
+            <field name="prefix">SN</field>
+            <field name="padding">4</field>
+            <field eval="False" name="company_id" />
+        </record>
+    </data>
+</odoo>

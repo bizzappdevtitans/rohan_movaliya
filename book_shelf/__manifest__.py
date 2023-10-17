@@ -1,0 +1,21 @@
+{
+    "name": "Book Shelf",
+    "version": "15.0.0.0.1",
+    "category": "Book Shelf/Book Shelf",
+    "summary": "Book Shelf Management ",
+    "website": "https://github.com/OCA/product-variant",
+    "depends": ["base", "stock", "sale_management"],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/ir_sequence_data.xml",
+        "views/book_shelf_view.xml",
+        "views/book_shelf_line_view.xml",
+        "views/product_product_view.xml",
+        "views/sale_order_view.xml",
+        "views/res_config_settings_views.xml",
+        "views/book_shelf_menu.xml",
+    ],
+    "license": "AGPL-3",
+    "application": True,
+    "installable": True,
+}

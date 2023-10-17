@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- inherit sale module view #T00427 -->
+    <record id="sale_order_form_view" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <!-- add smart button in sale.order view #T00427 -->
+                <button
+                    class="oe_stat_button"
+                    icon="fa-files-o"
+                    name="action_view_book_shelf"
+                    string="Book Shelf"
+                    type="object"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

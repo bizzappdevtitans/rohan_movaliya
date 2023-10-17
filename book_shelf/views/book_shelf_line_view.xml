@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- action for book.shelf.line #T00427 -->
+    <record id="action_book_shelf_line_menu" model="ir.actions.act_window">
+        <field name="name">Book Shelf Line</field>
+        <field name="res_model">book.shelf.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- form view of book.shelf.line #T00427 -->
+    <record id="view_book_shelf_line_form" model="ir.ui.view">
+        <field name="name">book.shelf.line.form</field>
+        <field name="model">book.shelf.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="product_id" />
+                        <field name="min_day" />
+                        <field name="max_day" />
+                        <field name="issue_date" />
+                        <field name="late_fee" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- tree view for book.shelf.line #T00427 -->
+    <record id="view_book_shelf_line_tree" model="ir.ui.view">
+        <field name="name">book.shelf.line.tree</field>
+        <field name="model">book.shelf.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id" />
+                <field name="min_day" />
+                <field name="max_day" />
+                <field name="issue_date" />
+                <field name="late_fee" />
+            </tree>
+        </field>
+    </record>
+</odoo>

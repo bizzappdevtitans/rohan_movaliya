@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- inherit product module view #T00427 -->
+    <record id="product_product_form_view" model="ir.ui.view">
+        <field name="name">product.product.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='standard_price_uom']" position="after">
+                <!-- added fields in product view #T00427 -->
+                <field name="book_short_name" />
+                <field name="late_fee" />
+                <field name="is_issued" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
