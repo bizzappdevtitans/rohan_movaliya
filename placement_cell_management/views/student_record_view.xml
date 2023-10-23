@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+
     <!-- action for student records #T00468 -->
     <record id="action_placement_cell_student_record" model="ir.actions.act_window">
         <field name="name">Student Record</field>
         <field name="res_model">student.record</field>
         <field name="view_mode">tree,form,search</field>
     </record>
+
     <!-- form view for student records #T00468 -->
     <record id="placement_cell_student_view_form" model="ir.ui.view">
         <field name="name">student.view.form</field>
@@ -16,12 +18,11 @@
                     <div class="oe_button_box" name="button_box">
                         <button
                             class="oe_stat_button"
-                            string="Company"
                             icon="fa-files-o"
                             name="applied_company_details"
+                            string="Company"
                             type="object"
-                        >
-                        </button>
+                        />
                     </div>
                     <field
                         class="oe_avatar"
@@ -29,7 +30,9 @@
                         options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"
                         widget="image"
                     />
-                    <div><br /></div>
+                    <div>
+                        <br />
+                    </div>
                     <div class="oe_title mb24">
                         <h1>
                             <field
@@ -50,7 +53,7 @@
                             />
                             <field name="department" />
                             <field name="cpi" />
-                            <field name="is_backlog" />
+                            <field name="is_backlog" widget="boolean_button" />
                             <field
                                 attrs="{'invisible':[('is_backlog','=',False)]}"
                                 name="no_of_backlog"
@@ -85,6 +88,7 @@
             </form>
         </field>
     </record>
+
     <!-- tree view for student records #T00468 -->
     <record id="placement_cell_student_view_tree" model="ir.ui.view">
         <field name="name">student.view.tree</field>

@@ -16,3 +16,4 @@ class ComapanyRecord(models.Model):
     website = fields.Char()
     linkdin = fields.Char()
     hiring_position = fields.Char()
+    contact = fields.Char()

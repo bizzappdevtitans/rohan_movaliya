@@ -6,38 +6,40 @@
 
     <!-- Student Menu for Placement Cell Management -->
     <menuitem
+        action="action_placement_cell_student_record"
         id="placement_cell_student_record_menu"
         name="Student"
         parent="placement_cell_management_root"
-        action="action_placement_cell_student_record"
     />
 
     <!-- Company Menu for Placement Cell Management #T00468 -->
     <menuitem
+        action="action_placement_cell_company_record"
         id="placement_cell_company_record_menu"
         name="Company"
         parent="placement_cell_management_root"
-        action="action_placement_cell_company_record"
     />
 
+    <!-- Placement Cell Activity Main Menu #T00468-->
     <menuitem
         id="placement_cell_placement_staff_menu"
         name="Placement"
         parent="placement_cell_management_root"
     />
 
+    <!-- Placement Cell Staff Menu #T00468 -->
     <menuitem
+        action="action_placement_cell_placement_staff_record"
         id="placement_cell_placement_staff_sub-menu"
         name="Staff"
         parent="placement_cell_placement_staff_menu"
-        action="action_placement_cell_placement_staff_record"
     />
 
     <!-- Settings Menu for Placement Cell Management #T00468 -->
     <menuitem
+        action="action_rec_config_settings"
         id="res_config_settings_root"
         name="Configuration"
         parent="placement_cell_management_root"
-        action="action_rec_config_settings"
     />
 </odoo>

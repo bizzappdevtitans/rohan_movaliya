@@ -15,7 +15,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                     <field
+                    <field
                         class="oe_avatar"
                         name="image"
                         options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"

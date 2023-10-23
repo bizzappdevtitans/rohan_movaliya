@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+
     <!-- action for student records #T00468 -->
     <record
         id="action_placement_cell_placement_staff_record"
@@ -9,6 +10,7 @@
         <field name="res_model">placement.staff</field>
         <field name="view_mode">tree,form,search</field>
     </record>
+
     <!-- form view for student records #T00468 -->
     <record id="placement_cell_staff_view_form" model="ir.ui.view">
         <field name="name">staff.view.form</field>
@@ -36,17 +38,10 @@
                         <group>
                             <field name="position" />
                         </group>
-                        <group>
-
-                        </group>
+                        <group />
                     </group>
                     <notebook>
                         <page string="Other Info">
-                            <group>
-                                <group>
-
-                                </group>
-                            </group>
                         </page>
                     </notebook>
                 </sheet>
@@ -58,6 +53,7 @@
             </form>
         </field>
     </record>
+
     <!-- tree view for student records #T00468 -->
     <record id="placement_cell_staff_view_tree" model="ir.ui.view">
         <field name="name">staff.view.tree</field>
