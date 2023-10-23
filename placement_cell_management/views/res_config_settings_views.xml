@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <!-- action for config setting -->
+    <!-- action for config setting #T00468 -->
     <record id="action_rec_config_settings" model="ir.actions.act_window">
         <field name="name">Settings</field>
         <field name="type">ir.actions.act_window</field>
@@ -11,7 +11,7 @@
             name="context"
         >{'module':'placement_cell_management','bin_size': False}</field>
     </record>
-    <!-- form view for settings menu-->
+    <!-- form view for settings menu #T00468-->
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">res.config.settings.view.placement_cell_management</field>
         <field name="model">res.config.settings</field>
@@ -33,11 +33,9 @@
                         <div class="col-12 col-lg-6 o_setting_box">
                             <div class="o_setting_left_pane" />
                             <div class="o_setting_right_pane">
-                                <span class="o_form_label">Eligiblity Criteria</span>
+                                <span class="o_form_label">Placement Year</span>
                                 <div class="text-muted content-group mt16">
-                                    <span />
-
-                                    <span />
+                                    <field name="year" class="text-center oe_inline" />
                                 </div>
                             </div>
                         </div>

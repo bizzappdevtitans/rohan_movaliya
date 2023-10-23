@@ -6,6 +6,13 @@ class ComapanyRecord(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Comapny Records"
 
-    # added field
+    # T00468 added field
     name = fields.Char(string="Company Name", required=True)
-    address = fields.Char(string="Company Address", required=True)
+    image = fields.Image()
+    address = fields.Char(string="Company Address")
+    student_id = fields.Many2one(
+        comodel_name="student.record", string="Student Details"
+    )
+    website = fields.Char()
+    linkdin = fields.Char()
+    hiring_position = fields.Char()

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
-    <!-- action for company record #T00468 -->
-    <record id="action_placement_cell_company_record" model="ir.actions.act_window">
-        <field name="name">Company Record</field>
-        <field name="res_model">company.record</field>
-        <field name="view_mode">tree,form,search,kanban</field>
+    <!-- action for student records #T00468 -->
+    <record
+        id="action_placement_cell_placement_staff_record"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Placement Cell Staff</field>
+        <field name="res_model">placement.staff</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
-
-    <!-- form view for company record #T00468 -->
-    <record id="placement_cell_company_view_form" model="ir.ui.view">
-        <field name="name">company.view.form</field>
-        <field name="model">company.record</field>
+    <!-- form view for student records #T00468 -->
+    <record id="placement_cell_staff_view_form" model="ir.ui.view">
+        <field name="name">staff.view.form</field>
+        <field name="model">placement.staff</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                     <field
+                    <field
                         class="oe_avatar"
                         name="image"
                         options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"
@@ -27,23 +28,23 @@
                                 class="text-break"
                                 default_focus="1"
                                 name="name"
-                                placeholder="e.g. BizzAppDev Systems Pvt. Ltd."
+                                placeholder="e.g. Ms. Bhoomi Parmar"
                             />
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="address" />
-                            <field name="website" widget="url" />
-                            <field name="linkdin" widget="url" />
-                            <field name="hiring_position" />
+                            <field name="position" />
+                        </group>
+                        <group>
+
                         </group>
                     </group>
                     <notebook>
                         <page string="Other Info">
                             <group>
                                 <group>
-                                    <field name="website" />
+
                                 </group>
                             </group>
                         </page>
@@ -57,19 +58,15 @@
             </form>
         </field>
     </record>
-
-    <!-- tree view for company record #T00468 -->
-    <record id="placement_cell_company_view_tree" model="ir.ui.view">
-        <field name="name">company.view.tree</field>
-        <field name="model">company.record</field>
+    <!-- tree view for student records #T00468 -->
+    <record id="placement_cell_staff_view_tree" model="ir.ui.view">
+        <field name="name">staff.view.tree</field>
+        <field name="model">placement.staff</field>
         <field name="arch" type="xml">
             <tree class="text-center oe_inline">
                 <field name="name" />
-                <field name="website" widget="url" />
-                <field name="linkdin" widget="url" />
-                <field name="hiring_position" />
+                <field name="position" />
             </tree>
         </field>
     </record>
-
 </odoo>

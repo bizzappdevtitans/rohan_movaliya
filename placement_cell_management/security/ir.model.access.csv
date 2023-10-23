@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 placement_cell_management.access_student_record,access_student_record,placement_cell_management.model_student_record,base.group_user,1,1,1,1
 placement_cell_management.access_company_record,access_company_record,placement_cell_management.model_company_record,base.group_user,1,1,1,1
+placement_cell_management.access_placement_staff,access_placement_staff,placement_cell_management.model_placement_staff,base.group_user,1,1,1,1
