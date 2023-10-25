@@ -10,10 +10,10 @@ class ComapanyRecord(models.Model):
     name = fields.Char(string="Company Name", required=True)
     image = fields.Image()
     address = fields.Char(string="Company Address")
-    student_id = fields.Many2one(
-        comodel_name="student.record", string="Student Details"
-    )
+    student_id = fields.Many2one(comodel_name="student.record")
+    student_ids = fields.Many2many(comodel_name="student.record")
     website = fields.Char()
-    linkdin = fields.Char()
-    hiring_position = fields.Char()
+    linkedin = fields.Char()
+    job_position = fields.Text()
     contact = fields.Char()
+    last_date = fields.Date()

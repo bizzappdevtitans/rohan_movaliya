@@ -7,6 +7,6 @@ class ResConfigSettings(models.TransientModel):
     # T00468 addded fields
     year = fields.Char(
         string="Placement Year",
-        default=2023 - 2024,
+        default="2023-2024",
         config_parameter="placement_cell_management.year",
     )

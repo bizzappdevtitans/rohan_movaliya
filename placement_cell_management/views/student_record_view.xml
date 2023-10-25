@@ -71,12 +71,18 @@
                                 <group>
                                     <field name="year" string="Placement Year" />
                                     <field name="address" string="Address" />
+                                </group>
+                                <group>
                                     <field
                                         name="skill"
                                         placeholder="e.g. Python Programming"
                                     />
+                                    <field name="achievement" />
                                 </group>
                             </group>
+                        </page>
+                        <page string="Company">
+                            <field name="company_ids" />
                         </page>
                     </notebook>
                 </sheet>

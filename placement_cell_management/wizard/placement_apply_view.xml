@@ -1,0 +1,36 @@
+<odoo>
+    <record id="action_company_apply_wizard" model="ir.actions.act_window">
+        <field name="name">Company Apply Wizard</field>
+        <field name="res_model">company.apply.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="company_apply_wizard_view_form" model="ir.ui.view">
+        <field name="name">apply.wizard.view.form</field>
+        <field name="model">company.apply.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group class="oe_title">
+                        <field name="name" />
+                        <field name="enrollment_no" />
+                    </group>
+                    <footer>
+                        <button
+                            class="oe_highlight"
+                            name="add_library"
+                            string="Add"
+                            type="object"
+                        />
+                        <button
+                            class="btn-secondary"
+                            special="cancel"
+                            string="Cancel"
+                        />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

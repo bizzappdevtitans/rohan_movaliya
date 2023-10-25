@@ -8,12 +8,20 @@
         <field name="view_mode">tree,form,search,kanban</field>
     </record>
 
-    <!-- form view for company record #T00468 -->
+    <!-- form view for company record  #T00468 -->
     <record id="placement_cell_company_view_form" model="ir.ui.view">
         <field name="name">company.view.form</field>
         <field name="model">company.record</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button
+                        class="oe_highlight"
+                        name="%(placement_cell_management.action_company_apply_wizard)d"
+                        string="Apply"
+                        type="action"
+                    />
+                </header>
                 <sheet>
                     <field
                         class="oe_avatar"
@@ -35,8 +43,8 @@
                         <group>
                             <field name="address" />
                             <field name="website" widget="url" />
-                            <field name="linkdin" widget="url" />
-                            <field name="hiring_position" />
+                            <field name="linkedin" widget="url" />
+                            <field name="job_position" />
                         </group>
                     </group>
                     <notebook>
@@ -46,6 +54,9 @@
                                     <field name="website" />
                                 </group>
                             </group>
+                        </page>
+                        <page string="Student Details">
+                            <field name="student_ids" />
                         </page>
                     </notebook>
                 </sheet>
@@ -66,8 +77,8 @@
             <tree class="text-center oe_inline">
                 <field name="name" />
                 <field name="website" widget="url" />
-                <field name="linkdin" widget="url" />
-                <field name="hiring_position" />
+                <field name="linkedin" widget="url" />
+                <field name="job_position" />
             </tree>
         </field>
     </record>

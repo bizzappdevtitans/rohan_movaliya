@@ -8,7 +8,7 @@
     >
         <field name="name">Placement Cell Staff</field>
         <field name="res_model">placement.staff</field>
-        <field name="view_mode">tree,form,search</field>
+        <field name="view_mode">tree,form,search,activity</field>
     </record>
 
     <!-- form view for student records #T00468 -->
@@ -30,13 +30,15 @@
                                 class="text-break"
                                 default_focus="1"
                                 name="name"
-                                placeholder="e.g. Ms. Bhoomi Parmar"
+                                placeholder="e.g. Ms. Bhoomi Desai"
                             />
                         </h1>
                     </div>
                     <group>
                         <group>
                             <field name="position" />
+                            <field name="contact" widget="phone" />
+                            <field name="seatting" />
                         </group>
                         <group />
                     </group>
@@ -62,6 +64,8 @@
             <tree class="text-center oe_inline">
                 <field name="name" />
                 <field name="position" />
+                <field name="contact" />
+                <field name="seatting" />
             </tree>
         </field>
     </record>

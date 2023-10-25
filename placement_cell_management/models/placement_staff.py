@@ -9,3 +9,5 @@ class Placementstaff(models.Model):
     name = fields.Char()
     position = fields.Char()
     image = fields.Image()
+    contact = fields.Char(string="Mobile")
+    seatting = fields.Char()

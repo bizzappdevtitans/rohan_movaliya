@@ -9,6 +9,7 @@
         action="action_placement_cell_student_record"
         id="placement_cell_student_record_menu"
         name="Student"
+        sequence="3"
         parent="placement_cell_management_root"
     />
 
@@ -17,6 +18,7 @@
         action="action_placement_cell_company_record"
         id="placement_cell_company_record_menu"
         name="Company"
+        sequence="2"
         parent="placement_cell_management_root"
     />
 
@@ -24,6 +26,7 @@
     <menuitem
         id="placement_cell_placement_staff_menu"
         name="Placement"
+        sequence="1"
         parent="placement_cell_management_root"
     />
 

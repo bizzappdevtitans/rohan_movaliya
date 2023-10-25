@@ -32,13 +32,17 @@ class StudentRecords(models.Model):
     contact = fields.Char(string="Mobile")
     resume = fields.Binary()
     address = fields.Text(string="Student Address")
-    skill = fields.Char(string="Technical Skill")
-    year = fields.Char(compute="_compute_year")
+    skill = fields.Text(string="Technical Skill")
+    achievement = fields.Text(string="Student Achievement")
+    year = fields.Char(compute="_compute_year", readonly=True)
+    company_id = fields.Many2one(comodel_name="company.record")
+    company_ids = fields.Many2many(comodel_name="company.record")
 
     @api.constrains("cpi")
     def _check_cpi(self):
         """function to check value of CPT if input value is false the
-        raise ValidationError #T00468"""
+        raise ValidationError #T00468
+        """
         if self.cpi > 10 or self.cpi < 0:
             raise ValidationError(_("Invalid CPI\nPlease check it."))
 

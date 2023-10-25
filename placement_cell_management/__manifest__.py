@@ -8,8 +8,10 @@
     "depends": ["base", "mail"],
     "data": [
         "security/ir.model.access.csv",
+        "wizard/placement_apply_view.xml",
         "views/student_record_view.xml",
         "views/company_record_view.xml",
+        "views/mail_activity_view.xml",
         "views/res_config_settings_views.xml",
         "views/placement_staff_view.xml",
         "views/placement_cell_menu.xml",
