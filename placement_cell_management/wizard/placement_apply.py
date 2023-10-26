@@ -5,8 +5,8 @@ class CompanyApplyWizard(models.TransientModel):
     _name = "company.apply.wizard"
     _description = "Company Apply Wizard"
 
-    name = fields.Char(string="Student Name ")
-    enrollment_no = fields.Char(string="Enrollment No.")
+    name = fields.Many2one(comodel_name="company.record")
 
-    def add_library(self):
+    # NOTE : Need to improvement
+    def action_confirm(self):
         pass

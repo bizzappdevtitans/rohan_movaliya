@@ -9,7 +9,7 @@
         action="action_placement_cell_student_record"
         id="placement_cell_student_record_menu"
         name="Student"
-        sequence="3"
+        sequence="1"
         parent="placement_cell_management_root"
     />
 
@@ -25,17 +25,10 @@
     <!-- Placement Cell Activity Main Menu #T00468-->
     <menuitem
         id="placement_cell_placement_staff_menu"
-        name="Placement"
-        sequence="1"
-        parent="placement_cell_management_root"
-    />
-
-    <!-- Placement Cell Staff Menu #T00468 -->
-    <menuitem
-        action="action_placement_cell_placement_staff_record"
-        id="placement_cell_placement_staff_sub-menu"
         name="Staff"
-        parent="placement_cell_placement_staff_menu"
+        sequence="3"
+        action="action_placement_cell_placement_staff_record"
+        parent="placement_cell_management_root"
     />
 
     <!-- Settings Menu for Placement Cell Management #T00468 -->

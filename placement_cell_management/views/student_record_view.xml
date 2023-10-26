@@ -5,7 +5,7 @@
     <record id="action_placement_cell_student_record" model="ir.actions.act_window">
         <field name="name">Student Record</field>
         <field name="res_model">student.record</field>
-        <field name="view_mode">tree,form,search</field>
+        <field name="view_mode">tree,form,search,activity</field>
     </record>
 
     <!-- form view for student records #T00468 -->
@@ -14,6 +14,20 @@
         <field name="model">student.record</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar" />
+                    <button
+                        class="oe_highlight"
+                        name="%(placement_cell_management.action_company_apply_wizard)d"
+                        string="Placement Registration "
+                        type="action"
+                    />
+                     <button
+                        name="action_send_email"
+                        string="Send by email"
+                        type="object"
+                    />
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button
@@ -52,12 +66,13 @@
                                 widget="radio"
                             />
                             <field name="department" />
-                            <field name="cpi" />
+                            <field name="cgpa" />
                             <field name="is_backlog" widget="boolean_button" />
                             <field
                                 attrs="{'invisible':[('is_backlog','=',False)]}"
                                 name="no_of_backlog"
                             />
+                            <field name="training_attendance" />
                         </group>
                         <group>
                             <field name="email_id" widget="email" />
@@ -69,7 +84,10 @@
                         <page string="Other Info">
                             <group>
                                 <group>
-                                    <field name="year" string="Placement Year" />
+                                    <field
+                                        name="year_of_graduation"
+                                        string="Placement Year"
+                                    />
                                     <field name="address" string="Address" />
                                 </group>
                                 <group>
@@ -77,6 +95,7 @@
                                         name="skill"
                                         placeholder="e.g. Python Programming"
                                     />
+                                    <field name="academic_records" />
                                     <field name="achievement" />
                                 </group>
                             </group>
@@ -105,7 +124,22 @@
                 <field name="name" />
                 <field name="gender" />
                 <field name="department" />
-                <field name="cpi" />
+                <field name="cgpa" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- search view for students record #T00468 -->
+    <record id="placement_cell_student_view_search" model="ir.ui.view">
+        <field name="name">student.view.search</field>
+        <field name="model">student.record</field>
+        <field name="arch" type="xml">
+            <tree class="text-center oe_inline">
+                <field name="enrollment_no" />
+                <field name="name" />
+                <field name="gender" />
+                <field name="department" />
+                <field name="cgpa" />
             </tree>
         </field>
     </record>

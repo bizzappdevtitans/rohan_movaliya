@@ -14,14 +14,6 @@
         <field name="model">company.record</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <button
-                        class="oe_highlight"
-                        name="%(placement_cell_management.action_company_apply_wizard)d"
-                        string="Apply"
-                        type="action"
-                    />
-                </header>
                 <sheet>
                     <field
                         class="oe_avatar"
@@ -45,13 +37,18 @@
                             <field name="website" widget="url" />
                             <field name="linkedin" widget="url" />
                             <field name="job_position" />
+                            <field name="job_description" />
+                        </group>
+                        <group>
+                            <field name="application_deadline" />
                         </group>
                     </group>
                     <notebook>
                         <page string="Other Info">
                             <group>
                                 <group>
-                                    <field name="website" />
+                                    <field name="company_profile" />
+                                    <field name="package_offer" />
                                 </group>
                             </group>
                         </page>
