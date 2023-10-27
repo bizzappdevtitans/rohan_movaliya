@@ -18,5 +18,23 @@
             All the students have compulsory to attend the session.
             </field>
        </record>
+
+       <!-- mail template for company driven in Campus #T00468 -->
+       <record id="company_driven_schedule_template" model="mail.template">
+           <field name="name">Company Driven Sechedule</field>
+           <field
+                name="model_id"
+                ref="placement_cell_management.model_student_record"
+            />
+           <field name="auto_delete" eval="True" />
+           <field name="email_from">collage@gmail.com</field>
+           <field name="email_to">{{object.email_id}}</field>
+           <field name="subject">Placement</field>
+           <field name="body_html">
+            Dear Students,
+            Kindly note that, The company come to collage,
+            If you fill the form, Present in Placement Cell at 10:00 PM Without Fail
+            </field>
+       </record>
    </data>
 </odoo>

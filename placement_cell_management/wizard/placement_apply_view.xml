@@ -16,7 +16,7 @@
             <form>
                 <sheet>
                     <group class="oe_title">
-                        <field name="name" />
+                        <field name="name_id" />
                     </group>
                     <footer>
                         <button

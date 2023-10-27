@@ -42,6 +42,19 @@
                                         name="year_of_graduation"
                                     />
                                 </div>
+                                <span class="o_form_label">Minimum Attendence</span>
+                                <div class="text-muted content-group mt16">
+                                    <field
+                                        class="text-center oe_inline"
+                                        name="attendence"
+                                    />
+                                    <span>Percentage</span>
+                                </div>
+                                <span class="o_form_label">Minimum CGPA</span>
+                                <div class="text-muted content-group mt16">
+                                    <field class="text-center oe_inline" name="cgpa" />
+                                    <span>Percentage</span>
+                                </div>
                             </div>
                         </div>
                     </div>

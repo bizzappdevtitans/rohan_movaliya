@@ -8,7 +8,7 @@
     >
         <field name="name">Placement Cell Staff</field>
         <field name="res_model">placement.staff</field>
-        <field name="view_mode">tree,form,search,activity</field>
+        <field name="view_mode">tree,form,activity</field>
     </record>
 
     <!-- form view for student records #T00468 -->
@@ -42,10 +42,6 @@
                         </group>
                         <group />
                     </group>
-                    <notebook>
-                        <page string="Other Info">
-                        </page>
-                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" />

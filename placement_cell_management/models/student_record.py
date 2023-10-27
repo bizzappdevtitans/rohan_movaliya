@@ -9,11 +9,12 @@ class StudentRecords(models.Model):
     _rec_name = "name"
 
     # T00468 added field
-    name = fields.Char(tracking=True, required=True)
+    name = fields.Char(required=True)
     image = fields.Image()
-    enrollment_no = fields.Char(copy=False)
+    enrollment_no = fields.Char(copy=False, required=True)
     gender = fields.Selection(
-        selection=[("male", "Male"), ("female", "Female"), ("others", "Others")]
+        selection=[("male", "Male"), ("female", "Female"), ("others", "Others")],
+        required=True,
     )
     department = fields.Selection(
         selection=[
@@ -24,9 +25,10 @@ class StudentRecords(models.Model):
             ("ee", "Electrical Engineering"),
             ("civil", "Civil Engineering"),
             ("aero", "Aerospace Engineering"),
-        ]
+        ],
+        required=True,
     )
-    cgpa = fields.Float(string="CGPA")
+    cgpa = fields.Float(string="CGPA", required=True)
     is_backlog = fields.Boolean(string="Backlog")
     no_of_backlog = fields.Integer(string="No of Backlog")
     email_id = fields.Char(string="E-mail")
@@ -52,13 +54,15 @@ class StudentRecords(models.Model):
         readonly=True,
     )
 
-    @api.constrains("cpi")
+    @api.constrains("cgpa", "training_attendance")
     def _check_cpi(self):
-        """function to check value of CGPA if input value is false the
+        """function to check value of CGPA and training attendance if input value is false the
         raise ValidationError #T00468
         """
-        if self.cpi > 10 or self.cpi < 0:
-            raise ValidationError(_("Invalid CPI\nPlease check it."))
+        if self.cgpa > 10 or self.cgpa < 0:
+            raise ValidationError(_("Invalid CGPA\nPlease check it."))
+        if self.training_attendance > 100 or self.training_attendance < 0:
+            raise ValidationError(_("Invalid Attendence\nPlease check it."))
 
     @api.model
     def _compute_year(self):
@@ -67,55 +71,40 @@ class StudentRecords(models.Model):
             "placement_cell_management.year_of_graduation"
         )
 
-    def applied_company_details(self):
-        """Smart button to show company records #T00468"""
-        self.ensure_one()
-        return {
-            "type": "ir.actions.act_window",
-            "name": "Company",
-            "view_mode": "tree,form",
-            "res_model": "company.record",
-            "domain": [],
-            "context": "{'create': False}",
-        }
-
-    @api.onchange("company_ids")
-    def action_draft(self):
-        if len(self.company_ids) == 0 and self.training_attendance > 90.00:
-            self.state = "draft"
-
-    @api.onchange("company_ids")
-    def action_applied(self):
-        if len(self.company_ids) > 0 and self.training_attendance > 90.00:
-            self.state = "applied"
-
-    @api.onchange("training_attendance")
-    def action_rejected(self):
-        if self.training_attendance < 90.00:
+    @api.constrains("cgpa", "training_attendance")
+    def _check_eligibility_criteria(self):
+        """function to check eligiblity crieteria to according to collage
+        rules #T00468
+        """
+        # get minimum attendence value from config setting
+        attendence = float(
+            self.env["ir.config_parameter"].get_param(
+                "placement_cell_management.attendence"
+            )
+        )
+        # get minimum cgpa value from config setting
+        cgpa = float(
+            self.env["ir.config_parameter"].get_param("placement_cell_management.cgpa")
+        )
+        if self.cgpa < cgpa or self.training_attendance < attendence:
             self.state = "rejected"
 
-    #  NOTE : Need to improvement #T00468
-    # def send_training_email(self, student, training):
-    #     email_template = self.env.ref("placement_cell.training_email_template")
-    #     email_values = {
-    #         "student_name": student.name,
-    #         "training_name": training.name,
-    #         "training_date": training.date,
-    #         "training_venue": training.venue,
-    #     }
-    #     email = email_template.send_mail(
-    #         student.id, force_send=True, email_values=email_values
-    #     )
+    @api.constrains("contact")
+    def _check_mobile_no(self):
+        """function to check mobile no is valid or not otherwise show error #T00468"""
+        if self.contact and len(self.contact.replace(" ", "")) != 10:
+            raise ValidationError(_("Invalid Contact Number"))
 
-    @api.onchange("company_ids")
-    def _onchange_company(self):
-        """function to check limit to applly for complany #T00468"""
-        if len(self.company_ids) >= 4:
-            raise ValidationError(_("You can apply only 3 companies"))
-
-    def action_send_email(self):
-        """method for run server actions #T00468"""
+    def action_send_email_for_training(self):
+        """method to send mail for inform training session #T00468"""
         mail_template = self.env.ref(
             "placement_cell_management.tarining_schedule_template"
+        )
+        mail_template.send_mail(self.id, force_send=True)
+
+    def action_send_email_for_placement(self):
+        """method to send mail for inform company driven for placement #T00468"""
+        mail_template = self.env.ref(
+            "placement_cell_management.company_driven_schedule_template"
         )
         mail_template.send_mail(self.id, force_send=True)
