@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherited form view of account.move  #T00377 -->
+    <record id="account_move_view_form" model="ir.ui.view">
+        <field name="name">account.move.view.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <!-- added field #T00377 -->
+            <xpath expr="//field[@name='payment_reference']" position="after">
+                <field name="about_invoice" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
