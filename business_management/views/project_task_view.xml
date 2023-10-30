@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherited form view of project.task #T00411  -->
+    <record id="project_task_view_form" model="ir.ui.view">
+        <field name="name">project.task.view.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <!-- added field #T00411 -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="about_task" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
