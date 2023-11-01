@@ -87,12 +87,12 @@
         <field name="name">company.view.search</field>
         <field name="model">company.record</field>
         <field name="arch" type="xml">
-            <tree class="text-center oe_inline">
+            <search class="text-center oe_inline">
                 <field name="name" />
                 <field name="job_position" />
                 <field name="campus_driven_date" />
                 <field name="application_deadline" />
-            </tree>
+            </search>
         </field>
     </record>
 

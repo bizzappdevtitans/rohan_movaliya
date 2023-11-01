@@ -15,7 +15,7 @@
                 <header>
                     <field name="state" widget="statusbar" />
                     <button
-                        attrs="{'invisible':[('state','=','rejected')]}"
+                        attrs="{'invisible':[('state','=','blocked')]}"
                         class="oe_highlight"
                         name="%(placement_cell_management.action_company_apply_wizard)d"
                         string="Placement Registration "
@@ -144,13 +144,13 @@
         <field name="name">student.view.search</field>
         <field name="model">student.record</field>
         <field name="arch" type="xml">
-            <tree class="text-center oe_inline">
+            <search class="text-center oe_inline">
                 <field name="enrollment_no" />
                 <field name="name" />
                 <field name="gender" />
                 <field name="department" />
                 <field name="cgpa" />
-            </tree>
+            </search>
         </field>
     </record>
 </odoo>

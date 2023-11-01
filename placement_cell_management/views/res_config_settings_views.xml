@@ -42,7 +42,7 @@
                                         name="year_of_graduation"
                                     />
                                 </div>
-                                <span class="o_form_label">Minimum Attendence</span>
+                                <span class="o_form_label">Minimum Attendance</span>
                                 <div class="text-muted content-group mt16">
                                     <field
                                         class="text-center oe_inline"

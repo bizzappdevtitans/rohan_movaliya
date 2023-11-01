@@ -3,9 +3,9 @@ from odoo.exceptions import ValidationError
 
 
 class ComapanyRecord(models.Model):
-    _name = "company.record"
+    _name = "company.company"
     _inherit = ["mail.thread", "mail.activity.mixin"]
-    _description = "Comapny Records"
+    _description = "Company Records"
 
     # T00468 added field
     name = fields.Char(string="Company Name", required=True)
@@ -18,7 +18,12 @@ class ComapanyRecord(models.Model):
     contact = fields.Char()
     application_deadline = fields.Date()
     company_profile = fields.Text()
-    student_ids = fields.Many2many(comodel_name="student.record")
+    student_ids = fields.Many2many(
+        comodel_name="student.record",
+        relation="",
+        column1="",
+        column2="",
+    )
     package_offer = fields.Char(help="Annual Package Offer")
     campus_driven_date = fields.Date()
 

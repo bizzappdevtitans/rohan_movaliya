@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 
 class StudentRecords(models.Model):
-    _name = "student.record"
+    _name = "student.student"
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Student Records"
     _rec_name = "name"
@@ -18,7 +18,7 @@ class StudentRecords(models.Model):
     )
     department = fields.Selection(
         selection=[
-            ("it", "Information Techonology"),
+            ("it", "Information Technology"),
             ("ce", "Computer Engineering"),
             ("chem", "Chemical Engineering"),
             ("mech", "Mechanical Engineering"),
@@ -46,7 +46,7 @@ class StudentRecords(models.Model):
             ("draft", "Draft"),
             ("applied", "Applied"),
             ("shortlisted", "Shortlisted"),
-            ("rejected", "Rejected"),
+            ("blocked", "Blocked"),
             ("placed", "Placed"),
         ],
         string="Status",
@@ -62,24 +62,24 @@ class StudentRecords(models.Model):
         if self.cgpa > 10 or self.cgpa < 0:
             raise ValidationError(_("Invalid CGPA\nPlease check it."))
         if self.training_attendance > 100 or self.training_attendance < 0:
-            raise ValidationError(_("Invalid Attendence\nPlease check it."))
+            raise ValidationError(_("Invalid Attendance\nPlease check it."))
 
     @api.model
     def _compute_year(self):
-        """function to get value from ci=onfiguration #T00468"""
+        """function to get value from configuration #T00468"""
         self.year_of_graduation = self.env["ir.config_parameter"].get_param(
             "placement_cell_management.year_of_graduation"
         )
 
     @api.constrains("cgpa", "training_attendance")
     def _check_eligibility_criteria(self):
-        """function to check eligiblity crieteria to according to collage
+        """function to check eligibility criteria to according to collage
         rules #T00468
         """
-        # get minimum attendence value from config setting
+        # get minimum attendance value from config setting
         attendence = float(
             self.env["ir.config_parameter"].get_param(
-                "placement_cell_management.attendence"
+                "placement_cell_management.attendance"
             )
         )
         # get minimum cgpa value from config setting
@@ -87,7 +87,7 @@ class StudentRecords(models.Model):
             self.env["ir.config_parameter"].get_param("placement_cell_management.cgpa")
         )
         if self.cgpa < cgpa or self.training_attendance < attendence:
-            self.state = "rejected"
+            self.state = "blocked"
 
     @api.constrains("contact")
     def _check_mobile_no(self):

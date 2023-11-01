@@ -4,7 +4,7 @@
     "category": "Placement Cell Management/Placement Cell Management",
     "author": "Bizzappdev",
     "summary": "Collage Placement Cell Management",
-    "website": "https://github.com/OCA/product-variant",
+    "website": "https://www.bizzappdev.com",
     "depends": ["base", "mail"],
     "data": [
         "security/ir.model.access.csv",

@@ -21,7 +21,7 @@
 
        <!-- mail template for company driven in Campus #T00468 -->
        <record id="company_driven_schedule_template" model="mail.template">
-           <field name="name">Company Driven Sechedule</field>
+           <field name="name">Company Driven Schedule </field>
            <field
                 name="model_id"
                 ref="placement_cell_management.model_student_record"

@@ -27,7 +27,7 @@ class TestStudentRecord(TransactionCase):
         )
 
     def test_01(self):
-        self.assertEqual(self.student_record_01.state, "rejected", "Invalid State")
+        self.assertEqual(self.student_record_01.state, "blocked", "Invalid State")
 
     def test_02(self):
         self.student_record_02.action_send_email_for_training()
