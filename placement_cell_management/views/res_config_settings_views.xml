@@ -53,7 +53,6 @@
                                 <span class="o_form_label">Minimum CGPA</span>
                                 <div class="text-muted content-group mt16">
                                     <field class="text-center oe_inline" name="cgpa" />
-                                    <span>Percentage</span>
                                 </div>
                             </div>
                         </div>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
    <data>
-       <!-- mail template for sechduled training session #T00468 -->
+       <!-- mail template for schedule training session #T00468 -->
        <record id="tarining_schedule_template" model="mail.template">
-           <field name="name">Training Sechedule</field>
+           <field name="name">Training Schedule</field>
            <field
                 name="model_id"
                 ref="placement_cell_management.model_student_record"
             />
            <field name="auto_delete" eval="True" />
-           <field name="email_from">collage@gmail.com</field>
+           <field name="email_from">{{user.email}}</field>
            <field name="email_to">{{object.email_id}}</field>
            <field name="subject">Training</field>
            <field name="body_html">
             Dear Students,
-            Kindly note that, Your next Training Session in Sheduled,
+            Kindly note that, Your next Training Session in Schedule,
             All the students have compulsory to attend the session.
             </field>
        </record>
@@ -27,7 +27,7 @@
                 ref="placement_cell_management.model_student_record"
             />
            <field name="auto_delete" eval="True" />
-           <field name="email_from">collage@gmail.com</field>
+           <field name="email_from">{{user.email}}</field>
            <field name="email_to">{{object.email_id}}</field>
            <field name="subject">Placement</field>
            <field name="body_html">
