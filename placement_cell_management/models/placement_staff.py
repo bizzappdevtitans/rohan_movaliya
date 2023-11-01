@@ -1,5 +1,4 @@
-from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import fields, models
 
 
 class Placementstaff(models.Model):
@@ -12,10 +11,5 @@ class Placementstaff(models.Model):
     position = fields.Char()
     image = fields.Image()
     contact = fields.Char(string="Mobile", required=True)
-    seatting = fields.Char(required=True)
-
-    @api.constrains("contact")
-    def _check_mobile_no(self):
-        """function to check mobile no is valid or not, otherwise show error #T00468"""
-        if self.contact and len(self.contact.replace(" ", "")) != 10:
-            raise ValidationError(_("Invalid Contact Number"))
+    seating = fields.Char(required=True)
+    email_id = fields.Char(string="E-mail")

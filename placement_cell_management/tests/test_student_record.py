@@ -5,7 +5,7 @@ from odoo.tests.common import TransactionCase
 class TestStudentRecord(TransactionCase):
     def setUp(self):
         super(TestStudentRecord, self).setUp()
-        self.student_record_01 = self.env["student.record"].create(
+        self.student_record_01 = self.env["student.student"].create(
             {
                 "name": "Harpal Nasid",
                 "enrollment_no": "2102031000127",
@@ -15,7 +15,7 @@ class TestStudentRecord(TransactionCase):
                 "training_attendance": "92.09",
             }
         )
-        self.student_record_02 = self.env["student.record"].create(
+        self.student_record_02 = self.env["student.student"].create(
             {
                 "name": "Rohan Movaliya",
                 "enrollment_no": "2102031000126",
@@ -44,7 +44,7 @@ class TestStudentRecord(TransactionCase):
         }
 
         with self.assertRaises(ValidationError):
-            self.env["student.record"].create(student_record)
+            self.env["student.student"].create(student_record)
 
     def test_04(self):
         student_record = {
@@ -57,7 +57,7 @@ class TestStudentRecord(TransactionCase):
         }
 
         with self.assertRaises(ValidationError):
-            self.env["student.record"].create(student_record)
+            self.env["student.student"].create(student_record)
 
     def test_05(self):
         student_record = {
@@ -71,7 +71,7 @@ class TestStudentRecord(TransactionCase):
         }
 
         with self.assertRaises(ValidationError):
-            self.env["student.record"].create(student_record)
+            self.env["student.student"].create(student_record)
 
     def test_06(self):
         self.assertEqual(

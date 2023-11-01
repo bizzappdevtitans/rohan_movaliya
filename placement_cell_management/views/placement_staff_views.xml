@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <!-- action for student records #T00468 -->
+    <!-- action for placement staff #T00468 -->
     <record
         id="action_placement_cell_placement_staff_record"
         model="ir.actions.act_window"
@@ -11,7 +11,7 @@
         <field name="view_mode">tree,form,activity</field>
     </record>
 
-    <!-- form view for student records #T00468 -->
+    <!-- form view for placement staff #T00468 -->
     <record id="placement_cell_staff_view_form" model="ir.ui.view">
         <field name="name">staff.view.form</field>
         <field name="model">placement.staff</field>
@@ -38,7 +38,7 @@
                         <group>
                             <field name="position" />
                             <field name="contact" widget="phone" />
-                            <field name="seatting" />
+                            <field name="seating" placeholder="e.g. B-305" />
                         </group>
                         <group />
                     </group>
@@ -52,7 +52,7 @@
         </field>
     </record>
 
-    <!-- tree view for student records #T00468 -->
+    <!-- tree view for placement staff #T00468 -->
     <record id="placement_cell_staff_view_tree" model="ir.ui.view">
         <field name="name">staff.view.tree</field>
         <field name="model">placement.staff</field>
@@ -61,8 +61,30 @@
                 <field name="name" />
                 <field name="position" />
                 <field name="contact" />
-                <field name="seatting" />
+                <field name="seating" />
             </tree>
+        </field>
+    </record>
+
+    <!-- search view for placement staff #T00468 -->
+    <record id="placement_cell_staff_view_search" model="ir.ui.view">
+        <field name="name">staff.view.search</field>
+        <field name="model">placement.staff</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="position" />
+                <field name="contact" />
+                <field name="seating" />
+                <field name="email_id" />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Seating"
+                        name="seating"
+                        context="{'group_by':'seating'}"
+                    />
+                </group>
+            </search>
         </field>
     </record>
 </odoo>

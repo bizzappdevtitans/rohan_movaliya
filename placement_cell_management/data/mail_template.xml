@@ -6,7 +6,7 @@
            <field name="name">Training Schedule</field>
            <field
                 name="model_id"
-                ref="placement_cell_management.model_student_record"
+                ref="placement_cell_management.model_student_student"
             />
            <field name="auto_delete" eval="True" />
            <field name="email_from">{{user.email}}</field>
@@ -19,12 +19,12 @@
             </field>
        </record>
 
-       <!-- mail template for company driven in Campus #T00468 -->
-       <record id="company_driven_schedule_template" model="mail.template">
-           <field name="name">Company Driven Schedule </field>
+       <!-- mail template for company come for placement #T00468 -->
+       <record id="interview_schedule_template" model="mail.template">
+           <field name="name">Interview Schedule </field>
            <field
                 name="model_id"
-                ref="placement_cell_management.model_student_record"
+                ref="placement_cell_management.model_student_student"
             />
            <field name="auto_delete" eval="True" />
            <field name="email_from">{{user.email}}</field>
@@ -33,7 +33,7 @@
            <field name="body_html">
             Dear Students,
             Kindly note that, The company come to collage,
-            If you fill the form, Present in Placement Cell at 10:00 PM Without Fail
+            If you fill the form, present in Placement Cell on time 10:00 PM without fail
             </field>
        </record>
    </data>

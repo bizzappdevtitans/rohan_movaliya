@@ -9,7 +9,7 @@ class TestPlacementStaff(TransactionCase):
     def test_01(self):
         staff_record_01 = {
             "name": "Ms. Bhoomi Parmar",
-            "seatting": "Ahmedabad",
+            "seating": "Ahmedabad",
             "contact": "6767676746576574",
         }
 

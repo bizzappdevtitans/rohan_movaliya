@@ -14,4 +14,4 @@ class TestCompanyRecord(TransactionCase):
         }
 
         with self.assertRaises(ValidationError):
-            self.env["company.record"].create(company_record_01)
+            self.env["company.company"].create(company_record_01)

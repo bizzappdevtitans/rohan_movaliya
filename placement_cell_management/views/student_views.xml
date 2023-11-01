@@ -3,13 +3,13 @@
     <!-- action for student records #T00468 -->
     <record id="action_placement_cell_student_record" model="ir.actions.act_window">
         <field name="name">Student Record</field>
-        <field name="res_model">student.record</field>
-        <field name="view_mode">tree,form,search,activity</field>
+        <field name="res_model">student.student</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
     <!-- form view for student records #T00468 -->
     <record id="placement_cell_student_view_form" model="ir.ui.view">
         <field name="name">student.view.form</field>
-        <field name="model">student.record</field>
+        <field name="model">student.student</field>
         <field name="arch" type="xml">
             <form>
                 <header>
@@ -112,7 +112,7 @@
                             </group>
                         </page>
                         <page string="Company">
-                            <field name="company_ids" />
+                            <field name="company_ids" readonly="1" />
                         </page>
                     </notebook>
                 </sheet>
@@ -127,7 +127,7 @@
     <!-- tree view for student records #T00468 -->
     <record id="placement_cell_student_view_tree" model="ir.ui.view">
         <field name="name">student.view.tree</field>
-        <field name="model">student.record</field>
+        <field name="model">student.student</field>
         <field name="arch" type="xml">
             <tree class="text-center oe_inline">
                 <field name="enrollment_no" />
@@ -142,14 +142,116 @@
     <!-- search view for students record #T00468 -->
     <record id="placement_cell_student_view_search" model="ir.ui.view">
         <field name="name">student.view.search</field>
-        <field name="model">student.record</field>
+        <field name="model">student.student</field>
         <field name="arch" type="xml">
-            <search class="text-center oe_inline">
-                <field name="enrollment_no" />
+            <search>
                 <field name="name" />
+                <field name="enrollment_no" />
                 <field name="gender" />
                 <field name="department" />
+                <field name="is_backlog" />
+                <field name="no_of_backlog" />
+                <field name="contact" />
+                <field name="training_attendance" />
+                <field name="year_of_graduation" />
+                <field name="state" />
                 <field name="cgpa" />
+                <filter domain="[('gender','=', 'male')]" name="male" string="Male" />
+                <filter
+                    domain="[('gender','=', 'female')]"
+                    name="female"
+                    string="Female"
+                />
+                <filter domain="[('department','=','it')]" name="it" string="IT" />
+                <filter domain="[('department','=','ce')]" name="ce" string="CE" />
+                <filter
+                    domain="[('department','=','chem')]"
+                    name="chem"
+                    string="Chemical"
+                />
+                <filter
+                    domain="[('department','=', 'mech')]"
+                    name="mech"
+                    string="Mechanical"
+                />
+                <filter
+                    domain="[('department','=', 'ee')]"
+                    name="ee"
+                    string="Electrical"
+                />
+                <filter
+                    domain="[('department','=', 'civil')]"
+                    name="civil"
+                    string="Civil"
+                />
+                <filter
+                    domain="[('department','=', 'aero')]"
+                    name="aero"
+                    string="Aerospace"
+                />
+                <filter
+                    domain="[('is_backlog','=', 'True')]"
+                    name="is_backlog"
+                    string="Backlog"
+                />
+                <filter domain="[('state','=', 'draft')]" name="draft" string="Draft" />
+                <filter
+                    domain="[('state','=', 'applied')]"
+                    name="applied"
+                    string="Applied"
+                />
+                <filter
+                    domain="[('state','=', 'blocked')]"
+                    name="blocked"
+                    string="Blocked"
+                />
+                <filter
+                    domain="[('state','=', 'placed')]"
+                    name="placed"
+                    string="Placed"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Gender"
+                        name="gender"
+                        context="{'group_by':'gender'}"
+                    />
+                    <filter
+                        string="Department"
+                        name="department"
+                        context="{'group_by':'department'}"
+                    />
+                    <filter
+                        string="Is Backlog"
+                        name="is_backlog"
+                        context="{'group_by':'is_backlog'}"
+                    />
+                    <filter
+                        string="State"
+                        name="state"
+                        context="{'group_by':'state'}"
+                    />
+                    <filter
+                        string="No. Backlog"
+                        name="no_of_backlog"
+                        context="{'group_by':'no_of_backlog'}"
+                    />
+                    <filter
+                        string="Attendance"
+                        name="training_attendance"
+                        context="{'group_by':'training_attendance'}"
+                    />
+                    <filter
+                        string="Graduction Year"
+                        name="year_of_graduation"
+                        context="{'group_by':'year_of_graduation'}"
+                    />
+                    <filter
+                        string="No. Backlog"
+                        name="no_of_backlog"
+                        context="{'group_by':'no_of_backlog'}"
+                    />
+                </group>
             </search>
         </field>
     </record>

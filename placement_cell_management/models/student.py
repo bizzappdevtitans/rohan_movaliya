@@ -40,7 +40,12 @@ class StudentRecords(models.Model):
     skill = fields.Text(string="Technical Skill")
     achievement = fields.Text(string="Student Achievement")
     year_of_graduation = fields.Char(compute="_compute_year", readonly=True)
-    company_ids = fields.Many2many(comodel_name="company.record")
+    company_ids = fields.Many2many(
+        comodel_name="company.company",
+        relation="company_student_rel",
+        column1="student_id",
+        column2="company_id",
+    )
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
@@ -60,9 +65,11 @@ class StudentRecords(models.Model):
         raise ValidationError #T00468
         """
         if self.cgpa > 10 or self.cgpa < 0:
-            raise ValidationError(_("Invalid CGPA\nPlease check it."))
+            raise ValidationError(_(f"Invalid Value of CGPA --> {self.cgpa}"))
         if self.training_attendance > 100 or self.training_attendance < 0:
-            raise ValidationError(_("Invalid Attendance\nPlease check it."))
+            raise ValidationError(
+                _(f"Invalid Value of Attendance --> {self.training_attendance}")
+            )
 
     @api.model
     def _compute_year(self):
@@ -89,12 +96,7 @@ class StudentRecords(models.Model):
         if self.cgpa < cgpa or self.training_attendance < attendence:
             self.state = "blocked"
 
-    @api.constrains("contact")
-    def _check_mobile_no(self):
-        """function to check mobile no is valid or not otherwise show error #T00468"""
-        if self.contact and len(self.contact.replace(" ", "")) != 10:
-            raise ValidationError(_("Invalid Contact Number"))
-
+    @api.model
     def action_send_email_for_training(self):
         """method to send mail for inform training session #T00468"""
         mail_template = self.env.ref(
@@ -102,9 +104,10 @@ class StudentRecords(models.Model):
         )
         mail_template.send_mail(self.id, force_send=True)
 
+    @api.model
     def action_send_email_for_placement(self):
-        """method to send mail for inform company driven for placement #T00468"""
+        """method to send mail for inform company come for placement #T00468"""
         mail_template = self.env.ref(
-            "placement_cell_management.company_driven_schedule_template"
+            "placement_cell_management.interview_schedule_template"
         )
         mail_template.send_mail(self.id, force_send=True)
