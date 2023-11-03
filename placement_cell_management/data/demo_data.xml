@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- demo data for students #T00468 -->
+        <record id="student_demo_01" model="student.student">
+            <field name="name">Kenil Kalthiya</field>
+            <field name="enrollment_no">2102031000889</field>
+            <field name="gender">male</field>
+            <field name="department">it</field>
+            <field name="cgpa">9.99</field>
+            <field name="email_id">kenilkalithiya33@yahoo.com</field>
+            <field name="contact">99544 64646</field>
+            <field name="training_attendance">98.00</field>
+        </record>
+
+        <record id="student_demo_02" model="student.student">
+            <field name="name">Rohan Movaliya</field>
+            <field name="enrollment_no">2102031000126</field>
+            <field name="gender">male</field>
+            <field name="department">ce</field>
+            <field name="cgpa">9.90</field>
+            <field name="email_id">rohanmovaliya34@gmail.com</field>
+            <field name="contact">97649 44954</field>
+            <field name="training_attendance">86.10</field>
+        </record>
+
+        <record id="student_demo_03" model="student.student">
+            <field name="name">Harpal Nasid</field>
+            <field name="enrollment_no">2102031000127</field>
+            <field name="gender">female</field>
+            <field name="department">it</field>
+            <field name="cgpa">9.90</field>
+            <field name="email_id">harplanasid34@gmail.com</field>
+            <field name="contact">94944 94949</field>
+            <field name="training_attendance">98.00</field>
+        </record>
+
+        <record id="student_demo_04" model="student.student">
+            <field name="name">Darshan Sanjaliya</field>
+            <field name="enrollment_no">2102031000177</field>
+            <field name="gender">male</field>
+            <field name="department">ce</field>
+            <field name="cgpa">8.88</field>
+            <field name="email_id">darshansanjaliya44@gmail.com</field>
+            <field name="contact">97959 96565</field>
+            <field name="training_attendance">88.00</field>
+        </record>
+
+        <record id="student_demo_05" model="student.student">
+            <field name="name">Om Patel</field>
+            <field name="enrollment_no">2102031000135</field>
+            <field name="gender">male</field>
+            <field name="department">aero</field>
+            <field name="cgpa">8.88</field>
+            <field name="email_id">ompatel66@gmail.com</field>
+            <field name="contact">45698 12345</field>
+            <field name="training_attendance">10.00</field>
+        </record>
+
+        <record id="student_demo_06" model="student.student">
+            <field name="name">Payal Mungalpara</field>
+            <field name="enrollment_no">2102031000128</field>
+            <field name="gender">female</field>
+            <field name="department">ee</field>
+            <field name="cgpa">7.50</field>
+            <field name="email_id">payalmungalpara44@gmail.com</field>
+            <field name="contact">16564 66464</field>
+            <field name="training_attendance">87.00</field>
+        </record>
+
+        <record id="student_demo_07" model="student.student">
+            <field name="name">Jenisha Nakrani</field>
+            <field name="enrollment_no">2102031000778</field>
+            <field name="gender">female</field>
+            <field name="department">civil</field>
+            <field name="cgpa">7.70</field>
+            <field name="email_id">mech</field>
+            <field name="contact">90990 64646</field>
+            <field name="training_attendance">93.83</field>
+        </record>
+
+        <record id="student_demo_08" model="student.student">
+            <field name="name">Dharmi Patel</field>
+            <field name="enrollment_no">2102031000100</field>
+            <field name="gender">female</field>
+            <field name="department">chem</field>
+            <field name="cgpa">9.90</field>
+            <field name="email_id">darmipatel66@gmail.com</field>
+            <field name="contact">99544 66655</field>
+            <field name="training_attendance">97.00</field>
+        </record>
+
+
+
+        <!-- Demo data for Company #T00468  -->
+        <record id="company_demo_01" model="company.company">
+            <field name="name">Bizzappdev Syatem Pvt. Ltd.</field>
+            <field name="address">Ahmedabad</field>
+            <field name="website">www.bizzappdev.com</field>
+            <field name="linkedin">@bizzappdev</field>
+            <field name="job_position">Odoo Devloper</field>
+        </record>
+
+        <record id="company_demo_02" model="company.company">
+            <field name="name">Amazon</field>
+            <field name="address">Ahmedabad</field>
+            <field name="website">www.amazon.com</field>
+            <field name="linkedin">@amazon</field>
+            <field name="job_position">Sales and Marketing Executive</field>
+        </record>
+
+        <record id="company_demo_03" model="company.company">
+            <field name="name">TCS</field>
+            <field name="address">Ahmedabad</field>
+            <field name="website">www.tcs.com</field>
+            <field name="linkedin">@tcs</field>
+            <field name="job_position">App Devloper</field>
+        </record>
+
+        <record id="company_demo_04" model="company.company">
+            <field name="name">Infosys</field>
+            <field name="address">Ahmedabad</field>
+            <field name="website">www.infosys.com</field>
+            <field name="linkedin">@infosys</field>
+            <field name="job_position">Web Devloper</field>
+        </record>
+
+        <record id="company_demo_05" model="company.company">
+            <field name="name">Durja Infotech</field>
+            <field name="address">Ahmedabad</field>
+            <field name="website">www.durjainfotech.com</field>
+            <field name="linkedin">@durjainfotech</field>
+            <field name="job_position">Marketing Executive</field>
+        </record>
+
+        <record id="company_demo_06" model="company.company">
+            <field name="name">Technoverse</field>
+            <field name="address">Ahmedabad</field>
+            <field name="website">www.techonoverse.com</field>
+            <field name="linkedin">@bizzappdev</field>
+            <field name="job_position">Graphics  Designer</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- action for student  #T00468 -->
+    <record id="action_placement_cell_student_record" model="ir.actions.act_window">
+        <field name="name">Student Details</field>
+        <field name="res_model">student.student</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+    <!-- form view for student  #T00468 -->
+    <record id="placement_cell_student_view_form" model="ir.ui.view">
+        <field name="name">student.view.form</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,applied,placed"
+                    />
+                    <button
+                        attrs="{'invisible':[('state','=','blocked')]}"
+                        class="oe_highlight"
+                        name="%(placement_cell_management.action_company_apply_wizard)d"
+                        string="Placement Registration "
+                        type="action"
+                    />
+                </header>
+                <sheet>
+                    <field
+                        class="oe_avatar"
+                        name="image"
+                        options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"
+                        widget="image"
+                    />
+                    <div>
+                        <br />
+                    </div>
+                    <div class="oe_title mb24">
+                        <h1>
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                class="text-break"
+                                default_focus="1"
+                                name="name"
+                                placeholder="e.g. Rohan Movaliya"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="enrollment_no"
+                            />
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="gender"
+                                options="{'horizontal': true}"
+                                widget="radio"
+                            />
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="department"
+                            />
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="cgpa"
+                            />
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="is_backlog"
+                                widget="boolean_button"
+                            />
+                            <field
+                                attrs="{'invisible':[('is_backlog','=',False)],'readonly':[('state','not in','draft')]}"
+                                name="no_of_backlog"
+                            />
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="training_attendance"
+                            />
+                        </group>
+                        <group>
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="email_id"
+                                widget="email"
+                            />
+                            <field
+                                attrs="{'readonly':[('state','not in','draft')]}"
+                                name="contact"
+                                widget="phone"
+                            />
+                            <field name="resume" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Other Info">
+                            <group>
+                                <group>
+                                    <field
+                                        name="year_of_graduation"
+                                        string="Placement Year"
+                                    />
+                                    <field name="address" string="Address" />
+                                </group>
+                                <group>
+                                    <field
+                                        name="skill"
+                                        placeholder="e.g. Python Programming"
+                                    />
+                                    <field name="academic_records" />
+                                    <field name="achievement" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Company">
+                            <field name="company_ids" readonly="1" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+    <!-- tree view for student #T00468 -->
+    <record id="placement_cell_student_view_tree" model="ir.ui.view">
+        <field name="name">student.view.tree</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <tree
+                class="text-center oe_inline"
+                decoration-danger="state == 'blocked'"
+                decoration-info="state == 'placed'"
+            >
+                <field name="enrollment_no" />
+                <field name="name" />
+                <field name="gender" />
+                <field name="department" />
+                <field name="cgpa" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-danger="state == 'blocked'"
+                    decoration-success="state == 'draft'"
+                    decoration-info="state == 'placed'"
+                    decoration-warning="state == 'applied'"
+                />
+            </tree>
+        </field>
+    </record>
+    <!-- search view for students #T00468 -->
+    <record id="placement_cell_student_view_search" model="ir.ui.view">
+        <field name="name">student.view.search</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="enrollment_no" />
+                <field name="gender" />
+                <field name="department" />
+                <field name="is_backlog" />
+                <field name="no_of_backlog" />
+                <field name="contact" />
+                <field name="training_attendance" />
+                <field name="year_of_graduation" />
+                <field name="state" />
+                <field name="cgpa" />
+                <filter domain="[('gender','=', 'male')]" name="male" string="Male" />
+                <filter
+                    domain="[('gender','=', 'female')]"
+                    name="female"
+                    string="Female"
+                />
+                <filter domain="[('department','=','it')]" name="it" string="IT" />
+                <filter domain="[('department','=','ce')]" name="ce" string="CE" />
+                <filter
+                    domain="[('department','=','chem')]"
+                    name="chem"
+                    string="Chemical"
+                />
+                <filter
+                    domain="[('department','=', 'mech')]"
+                    name="mech"
+                    string="Mechanical"
+                />
+                <filter
+                    domain="[('department','=', 'ee')]"
+                    name="ee"
+                    string="Electrical"
+                />
+                <filter
+                    domain="[('department','=', 'civil')]"
+                    name="civil"
+                    string="Civil"
+                />
+                <filter
+                    domain="[('department','=', 'aero')]"
+                    name="aero"
+                    string="Aerospace"
+                />
+                <filter
+                    domain="[('is_backlog','=', 'True')]"
+                    name="is_backlog"
+                    string="Backlog"
+                />
+                <filter domain="[('state','=', 'draft')]" name="draft" string="Draft" />
+                <filter
+                    domain="[('state','=', 'applied')]"
+                    name="applied"
+                    string="Applied"
+                />
+                <filter
+                    domain="[('state','=', 'blocked')]"
+                    name="blocked"
+                    string="Blocked"
+                />
+                <filter
+                    domain="[('state','=', 'placed')]"
+                    name="placed"
+                    string="Placed"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Gender"
+                        name="gender"
+                        context="{'group_by':'gender'}"
+                    />
+                    <filter
+                        string="Department"
+                        name="department"
+                        context="{'group_by':'department'}"
+                    />
+                    <filter
+                        string="Is Backlog"
+                        name="is_backlog"
+                        context="{'group_by':'is_backlog'}"
+                    />
+                    <filter
+                        string="State"
+                        name="state"
+                        context="{'group_by':'state'}"
+                    />
+                    <filter
+                        string="No. Backlog"
+                        name="no_of_backlog"
+                        context="{'group_by':'no_of_backlog'}"
+                    />
+                    <filter
+                        string="Attendance"
+                        name="training_attendance"
+                        context="{'group_by':'training_attendance'}"
+                    />
+                    <filter
+                        string="Graduction Year"
+                        name="year_of_graduation"
+                        context="{'group_by':'year_of_graduation'}"
+                    />
+                    <filter
+                        string="No. Backlog"
+                        name="no_of_backlog"
+                        context="{'group_by':'no_of_backlog'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

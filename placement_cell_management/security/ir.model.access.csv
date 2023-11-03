@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+placement_cell_management.access_student_student,access_student_student,placement_cell_management.model_student_student,base.group_user,1,1,1,1
+placement_cell_management.access_company_company,access_company_company,placement_cell_management.model_company_company,base.group_user,1,1,1,1
+placement_cell_management.access_placement_staff,access_placement_staff,placement_cell_management.model_placement_staff,base.group_user,1,1,1,1
+placement_cell_management.access_company_apply_wizard,access_company_apply_wizard,placement_cell_management.model_company_apply_wizard,base.group_user,1,1,1,1

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- action for company #T00468 -->
+    <record id="action_placement_cell_company_record" model="ir.actions.act_window">
+        <field name="name">Company Details</field>
+        <field name="res_model">company.company</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!-- form view for company #T00468 -->
+    <record id="placement_cell_company_view_form" model="ir.ui.view">
+        <field name="name">company.view.form</field>
+        <field name="model">company.company</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field
+                        class="oe_avatar"
+                        name="image"
+                        options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"
+                        widget="image"
+                    />
+                    <div class="oe_title mb24">
+                        <h1>
+                            <field
+                                class="text-break"
+                                default_focus="1"
+                                name="name"
+                                placeholder="e.g. BizzAppDev Systems Pvt. Ltd."
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="address" />
+                            <field name="website" widget="url" />
+                            <field name="linkedin" widget="url" />
+                            <field name="job_position" />
+                            <field name="job_description" />
+                        </group>
+                        <group>
+                            <field name="application_deadline" />
+                            <field name="company_interview_date" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Other Info">
+                            <group>
+                                <group>
+                                    <field name="company_profile" />
+                                    <field name="average_package" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Student Details">
+                            <field name="student_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- tree view for company #T00468 -->
+    <record id="placement_cell_company_view_tree" model="ir.ui.view">
+        <field name="name">company.view.tree</field>
+        <field name="model">company.company</field>
+        <field name="arch" type="xml">
+            <tree class="text-center oe_inline">
+                <field name="name" />
+                <field name="website" widget="url" />
+                <field name="linkedin" widget="url" />
+                <field name="job_position" />
+                <field name="company_interview_date" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- search view for company #T00468 -->
+    <record id="placement_cell_company_view_search" model="ir.ui.view">
+        <field name="name">company.view.search</field>
+        <field name="model">company.company</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="website" />
+                <field name="linkedin" />
+                <field name="name" />
+                <field name="job_position" />
+                <field name="company_interview_date" />
+                <field name="application_deadline" />
+                <field name="average_package" />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Job Position"
+                        name="job_position"
+                        context="{'group_by':'job_position'}"
+                    />
+                    <filter
+                        string="Interview Date"
+                        name="company_interview_date"
+                        context="{'group_by':'company_interview_date'}"
+                    />
+                    <filter
+                        string="Application Deadline"
+                        name="application_deadline"
+                        context="{'group_by':'application_deadline'}"
+                    />
+                    <filter
+                        string="Average Package"
+                        name="average_package"
+                        context="{'group_by':'average_package'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <data>
+       <!-- mail template for schedule training session #T00468 -->
+       <record id="tarining_schedule_template" model="mail.template">
+           <field name="name">Training Schedule</field>
+           <field
+                name="model_id"
+                ref="placement_cell_management.model_student_student"
+            />
+           <field name="auto_delete" eval="True" />
+           <field name="email_from">{{user.email}}</field>
+           <field name="email_to">{{object.email_id}}</field>
+           <field name="subject">Training</field>
+           <field name="body_html">
+            Dear Students,
+            Kindly note that, Your next Training Session in Schedule,
+            All the students have compulsory to attend the session.
+            </field>
+       </record>
+
+       <!-- mail template for company come for placement #T00468 -->
+       <record id="interview_schedule_template" model="mail.template">
+           <field name="name">Interview Schedule </field>
+           <field
+                name="model_id"
+                ref="placement_cell_management.model_student_student"
+            />
+           <field name="auto_delete" eval="True" />
+           <field name="email_from">{{user.email}}</field>
+           <field name="email_to">{{object.email_id}}</field>
+           <field name="subject">Placement</field>
+           <field name="body_html">
+            Dear Students,
+            Kindly note that, The company come to collage,
+            If you fill the form, present in Placement Cell on time 10:00 PM without fail
+            </field>
+       </record>
+   </data>
+</odoo>

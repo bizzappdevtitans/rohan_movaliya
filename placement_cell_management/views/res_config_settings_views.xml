@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- action for config setting #T00468 -->
+    <record id="action_rec_config_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field
+            name="context"
+        >{'module':'placement_cell_management','bin_size': False}</field>
+    </record>
+
+    <!-- form view for settings menu #T00468-->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.placement_cell_management</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div
+                    class="app_settings_block"
+                    data-key="Placement Cell Management"
+                    data-string="Placement Cell Management"
+                    id="placement_cell_management"
+                    string="Placement Cell Management"
+                >
+                    <h2>Placement Management</h2>
+                    <div
+                        class="row mt16 o_settings_container"
+                        id="placement_cell_setting"
+                    >
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Placement Year</span>
+                                <div class="text-muted content-group mt16">
+                                    <field
+                                        class="text-center oe_inline"
+                                        name="year_of_graduation"
+                                    />
+                                </div>
+                                <span class="o_form_label">Minimum Attendance</span>
+                                <div class="text-muted content-group mt16">
+                                    <field
+                                        class="text-center oe_inline"
+                                        name="attendence"
+                                    />
+                                    <span>Percentage</span>
+                                </div>
+                                <span class="o_form_label">Minimum CGPA</span>
+                                <div class="text-muted content-group mt16">
+                                    <field class="text-center oe_inline" name="cgpa" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

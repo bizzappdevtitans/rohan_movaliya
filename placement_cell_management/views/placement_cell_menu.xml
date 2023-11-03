@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Main menu for Placement Cell Management #T00468 -->
+    <menuitem id="placement_cell_management_root" name="Placement Cell" />
+
+    <!-- Student Menu for Placement Cell Management -->
+    <menuitem
+        id="placement_cell_student_record_menu"
+        name="Student"
+        parent="placement_cell_management_root"
+        sequence="1"
+        action="action_placement_cell_student_record"
+    />
+
+    <!-- Company Menu for Placement Cell Management #T00468 -->
+    <menuitem
+        id="placement_cell_company_record_menu"
+        name="Company"
+        parent="placement_cell_management_root"
+        sequence="2"
+        action="action_placement_cell_company_record"
+    />
+
+    <!-- Placement Cell Staff Menu #T00468-->
+    <menuitem
+        id="placement_cell_placement_staff_menu"
+        name="Staff"
+        parent="placement_cell_management_root"
+        sequence="3"
+        action="action_placement_cell_placement_staff_record"
+    />
+
+    <!-- Settings Menu for Placement Cell Management #T00468 -->
+    <menuitem
+        id="res_config_settings_root"
+        name="Configuration"
+        parent="placement_cell_management_root"
+        action="action_rec_config_settings"
+    />
+</odoo>

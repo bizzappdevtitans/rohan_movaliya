@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- action for registration wizard #T00468 -->
+    <record id="action_company_apply_wizard" model="ir.actions.act_window">
+        <field name="name">Company Apply Wizard</field>
+        <field name="res_model">company.apply.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- form view for wizard #T00468 -->
+    <record id="company_apply_wizard_view_form" model="ir.ui.view">
+        <field name="name">apply.wizard.view.form</field>
+        <field name="model">company.apply.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group class="oe_title">
+                        <field name="companies_id" />
+                    </group>
+                    <footer>
+                        <button
+                            class="oe_highlight"
+                            name="action_confirm"
+                            string="Apply"
+                            type="object"
+                        />
+                        <button
+                            class="btn-secondary"
+                            special="cancel"
+                            string="Cancel"
+                        />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
