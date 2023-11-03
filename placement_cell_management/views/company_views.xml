@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <!-- action for company record #T00468 -->
+    <!-- action for company #T00468 -->
     <record id="action_placement_cell_company_record" model="ir.actions.act_window">
-        <field name="name">Company Record</field>
+        <field name="name">Company Details</field>
         <field name="res_model">company.company</field>
         <field name="view_mode">tree,form,search</field>
     </record>
 
-    <!-- form view for company record  #T00468 -->
+    <!-- form view for company #T00468 -->
     <record id="placement_cell_company_view_form" model="ir.ui.view">
         <field name="name">company.view.form</field>
         <field name="model">company.company</field>
@@ -67,7 +67,7 @@
         </field>
     </record>
 
-    <!-- tree view for company record #T00468 -->
+    <!-- tree view for company #T00468 -->
     <record id="placement_cell_company_view_tree" model="ir.ui.view">
         <field name="name">company.view.tree</field>
         <field name="model">company.company</field>
@@ -82,7 +82,7 @@
         </field>
     </record>
 
-    <!-- search view for company record #T00468 -->
+    <!-- search view for company #T00468 -->
     <record id="placement_cell_company_view_search" model="ir.ui.view">
         <field name="name">company.view.search</field>
         <field name="model">company.company</field>

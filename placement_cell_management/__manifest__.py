@@ -10,6 +10,7 @@
         "security/ir.model.access.csv",
         "data/mail_template.xml",
         "data/mail_template_data.xml",
+        "data/demo_data.xml",
         "wizard/placement_apply_view.xml",
         "views/student_views.xml",
         "views/company_views.xml",

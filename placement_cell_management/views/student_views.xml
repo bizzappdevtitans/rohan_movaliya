@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <!-- action for student records #T00468 -->
+    <!-- action for student  #T00468 -->
     <record id="action_placement_cell_student_record" model="ir.actions.act_window">
-        <field name="name">Student Record</field>
+        <field name="name">Student Details</field>
         <field name="res_model">student.student</field>
         <field name="view_mode">tree,form,search</field>
     </record>
-    <!-- form view for student records #T00468 -->
+    <!-- form view for student  #T00468 -->
     <record id="placement_cell_student_view_form" model="ir.ui.view">
         <field name="name">student.view.form</field>
         <field name="model">student.student</field>
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar" />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,applied,placed"
+                    />
                     <button
                         attrs="{'invisible':[('state','=','blocked')]}"
                         class="oe_highlight"
@@ -124,22 +128,33 @@
             </form>
         </field>
     </record>
-    <!-- tree view for student records #T00468 -->
+    <!-- tree view for student #T00468 -->
     <record id="placement_cell_student_view_tree" model="ir.ui.view">
         <field name="name">student.view.tree</field>
         <field name="model">student.student</field>
         <field name="arch" type="xml">
-            <tree class="text-center oe_inline">
+            <tree
+                class="text-center oe_inline"
+                decoration-danger="state == 'blocked'"
+                decoration-info="state == 'placed'"
+            >
                 <field name="enrollment_no" />
                 <field name="name" />
                 <field name="gender" />
                 <field name="department" />
                 <field name="cgpa" />
-                <field name="state" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-danger="state == 'blocked'"
+                    decoration-success="state == 'draft'"
+                    decoration-info="state == 'placed'"
+                    decoration-warning="state == 'applied'"
+                />
             </tree>
         </field>
     </record>
-    <!-- search view for students record #T00468 -->
+    <!-- search view for students #T00468 -->
     <record id="placement_cell_student_view_search" model="ir.ui.view">
         <field name="name">student.view.search</field>
         <field name="model">student.student</field>

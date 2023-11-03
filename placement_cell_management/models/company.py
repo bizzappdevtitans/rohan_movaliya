@@ -1,7 +1,7 @@
 from odoo import fields, models
 
 
-class ComapanyRecord(models.Model):
+class ComapanyCompany(models.Model):
     _name = "company.company"
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Company Details"
@@ -22,5 +22,5 @@ class ComapanyRecord(models.Model):
         column1="company_id",
         column2="student_id",
     )
-    average_package = fields.Char(help="Annual Package Offer")
+    average_package = fields.Char(help="Avergae Package Offer")
     company_interview_date = fields.Date()

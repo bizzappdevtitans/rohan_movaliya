@@ -8,7 +8,7 @@
     >
         <field name="name">Placement Cell Staff</field>
         <field name="res_model">placement.staff</field>
-        <field name="view_mode">tree,form,activity</field>
+        <field name="view_mode">tree,form,search,activity</field>
     </record>
 
     <!-- form view for placement staff #T00468 -->
@@ -60,7 +60,7 @@
             <tree class="text-center oe_inline">
                 <field name="name" />
                 <field name="position" />
-                <field name="contact" />
+                <field name="contact" widget="phone" />
                 <field name="seating" />
             </tree>
         </field>
@@ -74,7 +74,7 @@
             <search>
                 <field name="name" />
                 <field name="position" />
-                <field name="contact" />
+                <field name="contact" widget="phone" />
                 <field name="seating" />
                 <field name="email_id" />
                 <group expand="0" string="Group By">
@@ -85,6 +85,23 @@
                     />
                 </group>
             </search>
+        </field>
+    </record>
+
+    <!-- activity view placement staff #T00468 -->
+    <record id="placement_cell_staff_view_activity" model="ir.ui.view">
+        <field name="name">staff.view.activity</field>
+        <field name="model">placement.staff</field>
+        <field name="arch" type="xml">
+            <activity string="Staff Activity">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" display="full" />
+                        </div>
+                    </div>
+                </templates>
+            </activity>
         </field>
     </record>
 </odoo>

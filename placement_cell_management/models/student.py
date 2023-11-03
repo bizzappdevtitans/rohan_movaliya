@@ -2,10 +2,10 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
-class StudentRecords(models.Model):
+class StudentStudent(models.Model):
     _name = "student.student"
     _inherit = ["mail.thread", "mail.activity.mixin"]
-    _description = "Student Records"
+    _description = "Student Details"
     _rec_name = "name"
 
     # T00468 added field
@@ -31,12 +31,12 @@ class StudentRecords(models.Model):
     cgpa = fields.Float(string="CGPA", required=True)
     is_backlog = fields.Boolean(string="Backlog")
     no_of_backlog = fields.Integer(string="No of Backlog")
-    email_id = fields.Char(string="E-mail")
-    contact = fields.Char(string="Mobile")
+    email_id = fields.Char(string="E-mail", required=True)
+    contact = fields.Char(string="Mobile", required=True)
     resume = fields.Binary()
     address = fields.Text(string="Student Address")
     academic_records = fields.Text()
-    training_attendance = fields.Float()
+    training_attendance = fields.Float(required=True)
     skill = fields.Text(string="Technical Skill")
     achievement = fields.Text(string="Student Achievement")
     year_of_graduation = fields.Char(compute="_compute_year", readonly=True)
@@ -50,7 +50,6 @@ class StudentRecords(models.Model):
         selection=[
             ("draft", "Draft"),
             ("applied", "Applied"),
-            ("shortlisted", "Shortlisted"),
             ("blocked", "Blocked"),
             ("placed", "Placed"),
         ],
@@ -65,10 +64,10 @@ class StudentRecords(models.Model):
         raise ValidationError #T00468
         """
         if self.cgpa > 10 or self.cgpa < 0:
-            raise ValidationError(_(f"Invalid Value of CGPA --> {self.cgpa}"))
+            raise ValidationError(_(f"Invalid Value of CGPA ({self.cgpa})"))
         if self.training_attendance > 100 or self.training_attendance < 0:
             raise ValidationError(
-                _(f"Invalid Value of Attendance --> {self.training_attendance}")
+                _(f"Invalid Value of Attendance ({self.training_attendance})")
             )
 
     @api.model
@@ -111,3 +110,10 @@ class StudentRecords(models.Model):
             "placement_cell_management.interview_schedule_template"
         )
         mail_template.send_mail(self.id, force_send=True)
+
+    @api.constrains("contact")
+    def _check_contact(self):
+        """function to check contact no is valid or not otherwise show error #T00468"""
+        contact = self.contact.replace(" ", "")
+        if not (len(contact) == 10 and contact.isdigit()):
+            raise ValidationError(_(f"Invalid Mobile Number ({self.contact})"))
