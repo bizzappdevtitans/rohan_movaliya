@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+   <!-- action using button #T00356 -->
+   <record id="action_school_student_wizard" model="ir.actions.act_window">
+      <field name="name">School Student Wizard</field>
+      <field name="res_model">school.student.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+   </record>
+
+   <!-- form view #T00356 -->
+   <record id="school_student_wizard_view_form" model="ir.ui.view">
+      <field name="name">student.wizard.view.form</field>
+      <field name="model">school.student.wizard</field>
+      <field name="arch" type="xml">
+         <form>
+            <sheet>
+               <group class="oe_title">
+                  <field name="name" />
+                  <field name="enrollment_no" />
+                  <field name="pass_active" />
+               </group>
+               <footer>
+                  <button
+                            name="add_library"
+                            string="Add"
+                            class="oe_highlight"
+                            type="object"
+                        />
+                  <button
+                            name="update_data"
+                            string="Update"
+                            class="oe_highlight"
+                            type="object"
+                        />
+                  <button string="Cancel" class="btn-secondary" special="cancel" />
+               </footer>
+            </sheet>
+         </form>
+      </field>
+   </record>
+</odoo>
