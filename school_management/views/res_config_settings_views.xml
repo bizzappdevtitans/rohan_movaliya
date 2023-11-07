@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- action for config setting #T00337 -->
+    <record id="action_rec_config_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' :'school_management','bin_size': False}</field>
+    </record>
+
+    <!-- form view #T00337 -->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.school_management</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div
+                    class="app_settings_block"
+                    data-string="School Management"
+                    id="school_management"
+                    string="School Management"
+                    data-key="School Management"
+                >
+                    <h2>School Management</h2>
+                    <div
+                        class="row mt16 o_settings_container"
+                        id="school_management_setting"
+                    >
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Student Age Criteria</span>
+                                <div class="text-muted content-group mt16">
+                                    <span>Minimum Age</span>
+                                    <field
+                                        name="minimum_student_age"
+                                        class="text-center oe_inline"
+                                    />
+                                    <span>Years</span>
+                                </div>
+                                <div>
+                                    <br />
+                                </div>
+                                <span class="o_form_label">Teacher Age Criteria</span>
+                                <div class="text-muted content-group mt16">
+                                    <span>Maximum Age</span>
+                                    <field
+                                        name="maximum_teacher_age"
+                                        class="text-center oe_inline"
+                                    />
+                                    <span>Years</span>
+                                </div>
+                                 <div>
+                                    <br />
+                                </div>
+                                <span class="o_form_label">Fees Payment Time</span>
+                                <div class="text-muted content-group mt16">
+                                    <span>Maximum Limit</span>
+                                    <field
+                                        name="fees_payment_time_limit"
+                                        class="text-center oe_inline"
+                                    />
+                                    <span>Months</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
