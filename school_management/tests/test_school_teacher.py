@@ -33,33 +33,47 @@ class TestSchoolTeacher(TransactionCase):
             }
         )
 
-    def test_01_check_sequence(self):
-        #  T00474 test case for teacher no
-        self.assertNotEqual(self.school_teacher_01.teacher_no, False, "Invalid Value")
+    def test_check_sequence(self):
+        """test case for teacher no #T00474"""
+        self.assertNotEqual(
+            self.school_teacher_01.teacher_no, False, "Teacher Number are not Generated"
+        )
 
-    def test_02_check_compute_method(self):
-        # T00474 test cases for compute method
+    def test_check_compute_method(self):
+        """test cases for compute method  #T00474"""
         self.email_id = self.school_teacher_01.teacher_email
-        self.assertEqual(self.email_id.endswith("@school.edu"), True, "Invalid Value")
-        self.assertEqual(self.school_teacher_01.count_student, 1, "Invalid Value")
+        self.assertEqual(
+            self.email_id.endswith("@school.edu"),
+            True,
+            "Teacher E-mail ID not Generated Properly",
+        )
+        self.assertEqual(
+            self.school_teacher_01.count_student,
+            1,
+            "Count of Total Student Number are not Matched",
+        )
 
-    def test_03_check_constrains(self):
-        # T00474 test case for constrains validation
+    def test_check_constrains(self):
+        """test case for constrains validation  #T00474"""
         with self.assertRaises(ValidationError):
             self.env["school.teacher"].create(self.school_teacher_02)
 
-    def test_04_check_unlink_method(self):
-        # T00474 test cases for unlink method
+    def test_check_unlink_method(self):
+        """test cases for unlink method  #T00474"""
         self.school_teacher_03.unlink()
         self.check_record = self.env["school.teacher"].search_count(
             [("name", "like", "Shivangi Trivedi")]
         )
-        self.assertEqual(self.check_record, 0, "Invalid Value")
+        self.assertEqual(self.check_record, 0, "Unlink Method are not Worked")
         with self.assertRaises(UserError):
             self.school_teacher_01.unlink()
 
-    def test_05_check_name_get_method(self):
-        # T00474 test case to test name_get method
+    def test_check_name_get_method(self):
+        """test case to test name_get method #T00474"""
         check = self.school_teacher_01.name_get()
         check = check[0]
-        self.assertEqual(check[1], "Rimple Popat - [RIM]", "Invalid Value")
+        self.assertEqual(
+            check[1],
+            "Rimple Popat - [RIM]",
+            "Not return name according name_get method",
+        )

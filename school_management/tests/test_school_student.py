@@ -43,33 +43,53 @@ class TestSchoolStudent(TransactionCase):
             }
         )
 
-    def test_01_check_sequence(self):
-        # T00747 test case for student enrollment no
+    def test_check_sequence(self):
+        """test case for student enrollment no  #T00747"""
         self.assertNotEqual(
-            self.school_student_01.enrollment_no, False, "Invalid Value"
+            self.school_student_01.enrollment_no,
+            False,
+            "Enrollment No are Not Generated",
         )
 
-    def test_02_check_compute_method(self):
-        #  T00474 test cases for compute methods
-        self.assertEqual(self.school_student_01.age, 19, "Invalid Value")
+    def test_check_compute_method(self):
+        """test cases for compute methods  #T00474"""
+        self.assertEqual(self.school_student_01.age, 19, "Student age are Not Matched")
         self.assertEqual(
-            self.school_student_01.last_date, date(2023, 12, 30), "Invalid Value"
+            self.school_student_01.last_date,
+            date(2023, 12, 30),
+            "Birth Date are Not Matched",
         )
-        self.assertEqual(self.school_student_01.total_boys, 30, "Invalid Value")
-        self.assertEqual(self.school_student_01.count_teacher, 1, "Invalid Value")
-        self.assertEqual(self.school_student_01.count_subject, 1, "Invalid Value")
+        self.assertEqual(
+            self.school_student_01.total_boys,
+            30,
+            "Count of total number of Boys are Wrong",
+        )
+        self.assertEqual(
+            self.school_student_01.count_teacher, 1, "Count of Teacher number is Wrong"
+        )
+        self.assertEqual(
+            self.school_student_01.count_subject, 1, "Count of Subject number is Wrong"
+        )
 
-    def test_03_check_constrains(self):
-        # T00474 test case for constrains validation
+    def test_check_constrains(self):
+        """test case for constrains validation  #T00474"""
         with self.assertRaises(ValidationError):
             self.env["school.student"].create(self.school_student_02)
 
-    def test_04_check_inverse_method(self):
-        #  T00474 test case for inverse method
+    def test_check_inverse_method(self):
+        """test case for inverse method  #T00474"""
         self.school_student_01._inverse_total_no_of_boys()
-        self.assertEqual(self.school_student_01.total_girls, 50, "Invalid Value")
+        self.assertEqual(
+            self.school_student_01.total_girls,
+            50,
+            "Count of total number of Girls are Wrong",
+        )
 
-    def test_05_check_server_action(self):
-        # T00474 test case to server action
+    def test_check_server_action(self):
+        """test case to server action #T00474"""
         self.school_student_01.set_blood_group()
-        self.assertEqual(self.school_student_01.blood_group, "unkonwn", "Invalid Value")
+        self.assertEqual(
+            self.school_student_01.blood_group,
+            "unkonwn",
+            "Blood Group are Not Set Automatically",
+        )

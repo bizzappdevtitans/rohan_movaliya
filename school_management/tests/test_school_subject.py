@@ -19,17 +19,21 @@ class TestSchoolSubject(TransactionCase):
             "standard": "std_9",
         }
 
-    def test_01_check_sequence(self):
-        # T00474 test case for subject no
-        self.assertNotEqual(self.school_subject_01.subject_code, False, "Invalid Value")
+    def test_check_sequence(self):
+        """test case for subject no  #T00474"""
+        self.assertNotEqual(
+            self.school_subject_01.subject_code,
+            False,
+            "Subject Code are not Generated Automatically",
+        )
 
-    def test_02_check_constrains(self):
-        # T00474 test case for check subject sort name
+    def test_check_constrains(self):
+        """test case for check subject sort name #T00474"""
         with self.assertRaises(ValidationError):
             self.env["school.subject"].create(self.school_subject_02)
 
-    def test_03_check_name_get_method(self):
-        # T00474 test case to test name_get method
+    def test_check_name_get_method(self):
+        """test case to test name_get method  #T00474"""
         check = self.school_subject_01.name_get()
         check = check[0]
-        self.assertEqual(check[1], "ADA", "Invalid Value")
+        self.assertEqual(check[1], "ADA", "Not return name according name_get method")
