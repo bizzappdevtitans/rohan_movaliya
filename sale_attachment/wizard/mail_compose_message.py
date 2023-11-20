@@ -1,24 +1,28 @@
-from odoo import models
+from odoo import api, fields, models
 
 
 class MailComposer(models.TransientModel):
     _inherit = "mail.compose.message"
 
-    def _onchange_template_id(self, template_id, composition_mode, model, res_id):
-        """inherited method to add attachment in email #T00456"""
-        values = super(MailComposer, self)._onchange_template_id(
-            template_id=template_id,
-            composition_mode=composition_mode,
-            model=model,
-            res_id=res_id,
-        )
-        default_res_id = self._context.get("default_res_id")
-        attachment_ids = (
+    # T00456 added field
+    is_attach = fields.Boolean(help="attach all chatter attachments in mail")
+
+    @api.onchange("is_attach")
+    def add_extra_attachments(self):
+        """method for attach chatter attachment in e-mail #T00456"""
+        chatter_attachment = (
             self.env["ir.attachment"]
-            .search([("res_id", "=", default_res_id), ("res_model", "=", "sale.order")])
+            .search(
+                [
+                    ("res_id", "=", self.env.context.get("active_id")),
+                    ("res_model", "=", "sale.order"),
+                ]
+            )
             .mapped("id")
         )
-        default_attachment = values["value"].get("attachment_ids")[0][2]
-        attachment_ids.extend(default_attachment)
-        values["value"].update({"attachment_ids": [(6, 0, attachment_ids)]})
-        return values
+        if not self.is_attach:
+            for attachment in chatter_attachment:
+                self.update({"attachment_ids": [(3, attachment, 0)]})
+        else:
+            for attachment in chatter_attachment:
+                self.update({"attachment_ids": [(4, attachment)]})

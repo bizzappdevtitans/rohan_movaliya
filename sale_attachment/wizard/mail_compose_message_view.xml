@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- inherited view for mail wizard #T00456 -->
+    <record model="ir.ui.view" id="inherti_wizard_mail_compose_message">
+        <field name="name">mail.compose.message.form.inherit</field>
+        <field name="model">mail.compose.message</field>
+        <field name="inherit_id" ref="mail.email_compose_message_wizard_form" />
+        <field name="arch" type="xml">
+            <!-- #T00456 added field -->
+            <xpath expr="//field[@name ='subject']" position="after">
+                <field name="is_attach" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
