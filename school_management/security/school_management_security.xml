@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <data>
         <!-- Record Rules for School Students #T00418 -->
         <record id="school_management_access" model="ir.module.category">
             <field name="name">School Management</field>
+            <field name="description">category for school management</field>
         </record>
-        <!-- gruup for school student #T00418 -->
+        <!-- group for school student #T00418 -->
         <record id="school_student_access" model="res.groups">
-            <field name="name">School Student</field>
-            <field
-            name="category_id"
-            ref="school_management.school_management_access"
-        />
+            <field name="name">Students</field>
+            <field name="category_id" ref="school_management_access" />
         </record>
-        <!-- gruup for school teacher #T00418 -->
+        <!-- group for school teacher #T00418 -->
         <record id="school_teacher_access" model="res.groups">
-            <field name="name">School Teacher</field>
-            <field
-            name="category_id"
-            ref="school_management.school_management_access"
-        />
+            <field name="name">Teachers</field>
+            <field name="category_id" ref="school_management_access" />
+            <field name="implied_ids" eval="[(4, ref('school_student_access'))]" />
         </record>
+        <!-- group for school principle #T00418 -->
+         <record id="school_principle_access" model="res.groups">
+            <field name="name">Principle</field>
+            <field name="category_id" ref="school_management_access" />
+            <field name="implied_ids" eval="[(4, ref('school_teacher_access'))]" />
+        </record>
+    </data>
 </odoo>

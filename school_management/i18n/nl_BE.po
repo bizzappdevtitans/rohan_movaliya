@@ -1,0 +1,917 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-22 10:29+0000\n"
+"PO-Revision-Date: 2023-11-22 10:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__std_10
+#: model:ir.model.fields.selection,name:school_management.selection__school_subject__standard__std_10
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher__standard__std_10
+msgid "10"
+msgstr "tien"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__std_11
+#: model:ir.model.fields.selection,name:school_management.selection__school_subject__standard__std_11
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher__standard__std_11
+msgid "11"
+msgstr "elf"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__standard__std_12
+#: model:ir.model.fields.selection,name:school_management.selection__school_subject__standard__std_12
+#: model:ir.model.fields.selection,name:school_management.selection__school_teacher__standard__std_12
+msgid "12"
+msgstr "twaalf"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Fees Payment Time</span>"
+msgstr "Kosten Betalingstijd"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Student Age Criteria</span>"
+msgstr "Leeftijdscriteria voor studenten"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Teacher Age Criteria</span>"
+msgstr "Leeftijdscriteria voor leraren"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span>Maximum Age</span>"
+msgstr "Maximale leeftijd"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span>Maximum Limit</span>"
+msgstr "Maximale limiet"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span>Minimum Age</span>"
+msgstr "Minimum leeftijd"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span>Months</span>"
+msgstr "Maanden"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "<span>Years</span>"
+msgstr "Jaren"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__blood_group__a+
+msgid "A+ve"
+msgstr "A+ve"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__blood_group__ab+
+msgid "AB+ve"
+msgstr "AB+ve"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_form
+msgid "About Teacher"
+msgstr "Over Leraar"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__about_teacher
+msgid "About Teacher Background"
+msgstr "Over lerarenachtergrond"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_needaction
+msgid "Action Needed"
+msgstr "Actie nodig"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_search
+msgid "Active"
+msgstr "Actief"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_ids
+msgid "Activities"
+msgstr "Activiteiten"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activiteit Uitzondering Decoratie"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_state
+msgid "Activity State"
+msgstr "Activiteitsstatus"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Pictogram voor activiteitstype"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_wizard_view_form
+msgid "Add"
+msgstr "Toevoegen"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__age
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Age"
+msgstr "Leeftijd"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban
+msgid "Age:"
+msgstr "Leeftijd"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_attachment_count
+msgid "Attachment Count"
+msgstr "Aantal bijlagen"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__blood_group__b+
+msgid "B+ve"
+msgstr "B+ve"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__birth_date
+msgid "Birth Date"
+msgstr "Geboortedatum"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__blood_group
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+msgid "Blood Group"
+msgstr "Bloedgroep"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_wizard_view_form
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__teacher_id
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+msgid "Class Teacher"
+msgstr "Klassen leraar"
+
+#. module: school_management
+#: code:addons/school_management/models/school_teacher.py:0
+#, python-format
+msgid "Class Teacher record are not deleted"
+msgstr "Class Teacher-records worden niet verwijderd"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__color
+#: model:ir.model.fields,field_description:school_management.field_school_subject__color
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__color
+msgid "Color"
+msgstr "Kleur"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuratie-instellingen"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.res_config_settings_root
+msgid "Configuration"
+msgstr "Configuratie"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__count_student
+msgid "Count Students"
+msgstr "Tel studenten"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__count_subject
+msgid "Count Subject"
+msgstr "Tel onderwerp"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__count_teacher
+msgid "Count Teacher"
+msgstr "Tel leraar"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_subject__create_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__create_uid
+msgid "Created by"
+msgstr "Gemaakt door"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_student__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_subject__create_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__create_date
+msgid "Created on"
+msgstr "Gemaakt op"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__currency_id
+msgid "Currency"
+msgstr "Munteenheid"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_student__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_subject__display_name
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Div-A"
+msgstr "Div-A"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Div-B"
+msgstr "Div-B"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Div-C"
+msgstr "Div-C"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Div-D"
+msgstr "Div-D"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Div-E"
+msgstr "Duiken"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__division
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__division
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Division"
+msgstr "Divisie"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban
+msgid "Division:"
+msgstr "Divisie"
+
+#. module: school_management
+#: code:addons/school_management/models/school_student.py:0
+#: model:ir.model.fields,field_description:school_management.field_school_library__enrollment_no
+#: model:ir.model.fields,field_description:school_management.field_school_student__enrollment_no
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_view_tree
+#, python-format
+msgid "Enrollment No"
+msgstr "Inschrijving nr"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__enrollment_no
+msgid "Enrollment No."
+msgstr "Inschrijving nr"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_view_form
+msgid "Fees"
+msgstr "Kosten"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_res_config_settings__fees_payment_time_limit
+msgid "Fees Payment Time Limit"
+msgstr "Kosten"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__gender__female
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+msgid "Female"
+msgstr "Vrouwelijk"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_follower_ids
+msgid "Followers"
+msgstr "Volgers"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Volgers (partners)"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Lettertype geweldig pictogram, b.v. fa-taken"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__gender
+msgid "Gender"
+msgstr "Geslacht"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban
+msgid "Gender:"
+msgstr "Geslacht"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_subject_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Group By"
+msgstr "Groeperen op"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__has_message
+msgid "Has Message"
+msgstr "Heeft bericht"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__id
+#: model:ir.model.fields,field_description:school_management.field_school_student__id
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__id
+#: model:ir.model.fields,field_description:school_management.field_school_subject__id
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__id
+msgid "ID"
+msgstr "ID kaart"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_exception_icon
+msgid "Icon"
+msgstr "Icoon"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Pictogram om een ​​uitzonderingsactiviteit aan te geven."
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__message_needaction
+#: model:ir.model.fields,help:school_management.field_school_student__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Indien aangevinkt, vereisen nieuwe berichten uw aandacht."
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Indien aangevinkt, hebben sommige berichten een bezorgfout."
+
+#. module: school_management
+#: code:addons/school_management/models/school_student.py:0
+#: code:addons/school_management/models/school_teacher.py:0
+#, python-format
+msgid "Invalid Mobile Number"
+msgstr "Ongeldig telefoonnummer"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_search
+msgid "Is Active"
+msgstr "Is actief"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_is_follower
+msgid "Is Follower"
+msgstr "Is volger"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__last_date
+msgid "Last Date"
+msgstr "Laatste datum"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_view_form
+msgid "Last Date to Pay Fees"
+msgstr "Laatste datum om kosten te betalen"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_student____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_subject____last_update
+#: model:ir.model.fields,field_description:school_management.field_school_teacher____last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_subject__write_uid
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_student__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_subject__write_date
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__write_date
+msgid "Last Updated on"
+msgstr "Laatst geupdate op"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_library_menu
+msgid "Library"
+msgstr "Bibliotheek"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_view_form
+msgid "Library Access"
+msgstr "Toegang tot bibliotheek"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__is_active
+msgid "Library Pass Activated"
+msgstr "Bibliotheekpas geactiveerd"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_view_tree
+msgid "Library Pass Avtive"
+msgstr "Bibliotheekpas Avtive"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_library
+msgid "Library of School"
+msgstr "Bibliotheek van School"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Hoofdbijlage"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__gender__male
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+msgid "Male"
+msgstr "Mannelijk"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_res_config_settings__maximum_teacher_age
+msgid "Maximum Teacher Age"
+msgstr "Maximale leeftijd van de leraar"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_has_error
+msgid "Message Delivery error"
+msgstr "Berichtbezorgingsfout"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_ids
+msgid "Messages"
+msgstr "Berichten"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_res_config_settings__minimum_student_age
+msgid "Minimum Student Age"
+msgstr "Minimale studentenleeftijd"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mijn activiteitsdeadline"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__name
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_tree
+msgid "Name"
+msgstr "Naam"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban
+msgid "Name:"
+msgstr "Naam"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Deadline volgende activiteit"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_summary
+msgid "Next Activity Summary"
+msgstr "Samenvatting van volgende activiteit"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_type_id
+msgid "Next Activity Type"
+msgstr "Volgende activiteitstype"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_search
+msgid "Not Active"
+msgstr "Niet actief"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Aantal acties"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_has_error_counter
+msgid "Number of errors"
+msgstr "Aantal fouten"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Aantal berichten waarvoor een actie vereist is"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Aantal berichten met bezorgfout"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Aantal ongelezen berichten"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__blood_group__o+
+msgid "O+ve"
+msgstr "O+ve"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_form
+msgid "Other Info"
+msgstr "Andere informatie"
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__gender__others
+msgid "Others"
+msgstr "Anderen"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__mobile_no
+msgid "Parents Mobile No."
+msgstr "Ouders mobiel nr."
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__pass_active
+msgid "Pass Activated"
+msgstr "Pass geactiveerd"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_view_tree
+msgid "Pass Activation Date"
+msgstr "Activeringsdatum van de pas"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__pass_active_date
+msgid "Pass Active Date"
+msgstr "Actieve datum doorgeven"
+
+#. module: school_management
+#: model:ir.actions.server,name:school_management.active_gate_pass_ir_actions_server
+#: model:ir.cron,cron_name:school_management.active_gate_pass
+#: model:ir.cron,name:school_management.active_gate_pass
+msgid "Pass Cancelled: School Library"
+msgstr "Pas geannuleerd: schoolbibliotheek"
+
+#. module: school_management
+#: model:res.groups,name:school_management.school_principle_access
+msgid "Principle"
+msgstr "Beginsel"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__qualification
+msgid "Qualification of Teacher"
+msgstr "Kwalificatie van leraar"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwoordelijke gebruiker"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu_root
+msgid "School"
+msgstr "School"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_library
+msgid "School Library"
+msgstr "Schoolbibliotheek"
+
+#. module: school_management
+#: model:ir.module.category,name:school_management.school_management_access
+#: model_terms:ir.ui.view,arch_db:school_management.res_config_settings_view_form
+msgid "School Management"
+msgstr "Schoolmanagement"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_student
+msgid "School Student"
+msgstr "Student"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_student_wizard
+msgid "School Student Wizard"
+msgstr "Tovenaar van schoolstudenten"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_student_wizard
+msgid "School Student wizard"
+msgstr "Schoolstudent-wizard"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_student
+msgid "School Students"
+msgstr "Scholieren"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_subject
+msgid "School Subject"
+msgstr "Schoolvak"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_subject
+msgid "School Subjects"
+msgstr "School onderwerpen"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_school_teacher
+msgid "School Teacher"
+msgstr "Schoolleraar"
+
+#. module: school_management
+#: model:ir.model,name:school_management.model_school_teacher
+msgid "School Teachers"
+msgstr "Schoolleraren"
+
+#. module: school_management
+#: model:ir.actions.server,name:school_management.model_school_student_action_set_blood_group
+msgid "Set Blood Group"
+msgstr "Bloedgroep instellen"
+
+#. module: school_management
+#: model:ir.actions.act_window,name:school_management.action_rec_config_settings
+msgid "Settings"
+msgstr "Instellingen"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__sort_name
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_tree
+msgid "Sort Code"
+msgstr "Sorteercode"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__standard
+#: model:ir.model.fields,field_description:school_management.field_school_subject__standard
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__standard
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_subject_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Standard"
+msgstr "Standaard"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__start_date
+msgid "Start Date"
+msgstr "Begin datum"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_view_form
+msgid "Start Date to Pay Fees"
+msgstr "Begindatum voor het betalen van kosten"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_subject_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Std-10"
+msgstr "Std-10"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_subject_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Std-11"
+msgstr "Std-11"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_subject_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Std-12"
+msgstr "Std-12"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_subject_search
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Std-9"
+msgstr "Std-9"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_kanban
+msgid "Std:"
+msgstr "Soa:"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_management_menu
+msgid "Student"
+msgstr "Student"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_library__student_name
+#: model:ir.model.fields,field_description:school_management.field_school_student__name
+#: model_terms:ir.ui.view,arch_db:school_management.school_library_view_tree
+msgid "Student Name"
+msgstr "Studenten naam"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student_wizard__name
+msgid "Student Name "
+msgstr "Studenten naam"
+
+#. module: school_management
+#: model:res.groups,name:school_management.school_student_access
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_form
+msgid "Students"
+msgstr "Studenten"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_subject_menu
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_view_form
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_search
+msgid "Subject"
+msgstr "Onderwerp"
+
+#. module: school_management
+#: code:addons/school_management/models/school_subject.py:0
+#: model:ir.model.fields,field_description:school_management.field_school_subject__subject_code
+#, python-format
+msgid "Subject Code"
+msgstr "Onderwerpcode"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_subject__subject_name
+msgid "Subject Name"
+msgstr "Onderwerp"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_subject__subject_sort_name
+msgid "Subject Sort Name"
+msgstr "Sorteernaam onderwerp"
+
+#. module: school_management
+#: code:addons/school_management/models/school_subject.py:0
+#, python-format
+msgid "Subject Sort Name size is Maximum 4 characters allowed!"
+msgstr "Onderwerp Sorteer Naamgrootte is maximaal 4 tekens toegestaan!"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__subject_ids
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_tree
+msgid "Subjects"
+msgstr "Onderwerpen"
+
+#. module: school_management
+#: model:ir.ui.menu,name:school_management.school_teacher_menu
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_view_form
+#: model_terms:ir.ui.view,arch_db:school_management.school_subject_search
+msgid "Teacher"
+msgstr "Docent"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__age
+msgid "Teacher Age"
+msgstr "Leraar leeftijd"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__teacher_email
+msgid "Teacher Email_id"
+msgstr "E-mail_id van docent"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__mobile_no
+msgid "Teacher Mobile No"
+msgstr "Leraar mobiel nr"
+
+#. module: school_management
+#: code:addons/school_management/models/school_teacher.py:0
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_tree
+#, python-format
+msgid "Teacher No"
+msgstr "Leraar nr"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_teacher__teacher_no
+msgid "Teacher No."
+msgstr "Leraar nr."
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_teacher_view_form
+msgid "Teacher Qualidication"
+msgstr "Kwalificatie van de leraar"
+
+#. module: school_management
+#: model:res.groups,name:school_management.school_teacher_access
+msgid "Teachers"
+msgstr "Leraren"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__total_boys
+msgid "Total Boys"
+msgstr "Totaal jongens"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__total_fees
+msgid "Total Fees"
+msgstr "Totale kosten"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__total_girls
+msgid "Total Girls"
+msgstr "Totaal meisjes"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_subject__teacher_ids
+msgid "Trachers"
+msgstr "Leraren"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_student__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type van de geregistreerde uitzonderingsactiviteit."
+
+#. module: school_management
+#: model:ir.model.fields.selection,name:school_management.selection__school_student__blood_group__unkonwn
+msgid "Unknown"
+msgstr "Onbekend"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_unread
+msgid "Unread Messages"
+msgstr "ongelezen berichten"
+
+#. module: school_management
+#: model:ir.model.fields,field_description:school_management.field_school_student__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Teller ongelezen berichten"
+
+#. module: school_management
+#: model_terms:ir.ui.view,arch_db:school_management.school_student_wizard_view_form
+msgid "Update"
+msgstr "Update"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_teacher__division
+msgid "Which Division of Class Teacher"
+msgstr "Welke afdeling van de klasleraar"
+
+#. module: school_management
+#: model:ir.model.fields,help:school_management.field_school_teacher__standard
+msgid "Which Standard of Class Teacher"
+msgstr "Welke standaard van klasseleraar"
+
+#. module: school_management
+#: model:ir.module.category,description:school_management.school_management_access
+msgid "category for school management"
+msgstr "categorie voor schoolmanagement"
